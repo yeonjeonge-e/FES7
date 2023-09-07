@@ -1,0 +1,33 @@
+/* class 선택자 */
+.myself {
+  color: blueviolet;
+}
+
+/* id 선택자 */
+#title {
+  text-decoration: underline;
+}
+
+/* 형제 인접 선택자 */
+.myself+p {
+  color: red;
+}
+
+/* 자손 선택자 */
+/* .sect2 strong {
+  background-color: yellow;
+} */
+
+/* 자식 선택자 */
+.sect2>strong {
+  background-color: yellow;
+}
+
+.sect2>* {
+  border: 2px solid red;
+}
+
+/* 강조 */
+strong {
+  background-color: yellow;
+}

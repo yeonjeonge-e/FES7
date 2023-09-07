@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON 실습</title>
+</head>
+
+<body>
+  <script>
+
+    let jsonObj = '';
+
+    function xhrRequest() {
+      const requestObj = new XMLHttpRequest();
+      //  객체를 생성할 땐 생성자 함수 이용
+      //  XMLHttpRequest : xml 초창기 메소드
+      requestObj.open("GET", 'heros.json');
+      //  open() : 통신을 하겠다 라는 뜻
+      //  GET : 서버한테 데이터를 요청하는 것
+      //        해당하는 서버의 주소 (API)
+      requestObj.send();
+      //  send() : 서버의 주소를 보내는 것
+      requestObj.onreadystatechange = () => {
+        //  프로퍼티 : 서버한테 보낸 리스펀스(응답)을 실시간으로 감지하고 대기해서 변화가 감지되면 데이터가 들어오는 것을 확인함
+        //  onreadystatechange : state에 따른 상태가 4가지 정도 있음
+        //  통신 준비 / 통신 요청 / 통신 완료 ~~
+        //  위 상태들이 바뀔 때마다 콘솔에 찍히는 거라 여러번 찍힐수도 있음
+
+        if (requestObj.readyState === 4 && requestObj.status === '200') {
+          //  4 : 요청과 응답이 무사히 끝났다 라는걸 의미
+
+          //  서버와 통신을 한 목적 : 데이터를 주고 받는 것
+          jsonObj = JSON.parse(requestObj.responseText());
+        }
+      }
+    }
+
+    xhrRequest()
+  </script>
+</body>
+
+</html>

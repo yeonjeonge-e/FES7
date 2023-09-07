@@ -1,0 +1,40 @@
+// @mixin sample {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 200px;
+// }
+
+// .one {
+//   @include sample;
+//   background-color: red;
+// }
+
+// .two {
+//   @include sample;
+//   background-color: blue;
+// }
+
+
+//  위와 아래는 같은 코드
+
+
+@mixin sample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  @content;
+}
+
+.one {
+  @include sample {
+    background-color: red;
+  }
+}
+
+.two {
+  @include sample {
+    background-color: blue;
+  }
+}

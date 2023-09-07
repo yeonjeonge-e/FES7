@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WENIV 로그인</title>
+  <link rel="stylesheet" href="./css/login.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="title">
+      <h1 class="title2">로그인 또는 회원가입</h1>
+    </header>
+
+    <main>
+      <h2 class="weniv">위니브에서 여러분의 궁금증을 해결하세요!:)</h2>
+
+      <form class="form1">
+        <div class="ID">
+          <input type="text" class="input id" id="inputId" placeholder="아이디">
+        </div>
+
+        <div class="find id2">아이디를 입력해 주세요.</div>
+
+        <div class="PW">
+          <input type="password" class="input pwd" id="inputPwd" placeholder="비밀번호">
+        </div>
+
+        <div class="find pw2">아이디 혹은 비밀번호과 일치하지 않습니다.</div>
+
+
+        <!-- 체크 -->
+        <div class="btncheck">
+          <input type="checkbox" id="inpHold" class="inphold txt-hide">
+          <img src="./img/check-box-w.svg" alt="check-box-w">
+          <div class="inpHold">로그인 상태 유지</div>
+        </div>
+
+        <div class="btncheck">
+          <input type="checkbox" class="check" hidden>
+          <img src="./img/check-box-w.svg" alt="check-box-w">
+          <div class="checktext">로그인 상태 유지</div>
+        </div>
+
+        <a href="./" class="btn_b">
+          <p class="btn_t">로그인</p>
+        </a>
+
+      </form>
+
+
+      <div class="join">
+        <a href="#">회원가입</a>
+        <span>|</span>
+        <a href="#">아이디/비밀번호 찾기</a>
+      </div>
+
+      <div class="hrr">
+        <hr class="hrleft" />
+        <span>또는</span>
+        <hr class="hrright" />
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="login-list">
+        <div class="account google">
+          <img class="img" src="./img/Google__G__Logo 1.svg" alt="google">
+          <span class="account_name">구글 계정으로 로그인</span>
+        </div>
+        <div class="account facebook">
+          <img class="img" src="./img/facebook.svg" alt="facebook">
+          <span class="account_name">페이스북 계정으로 로그인</span>
+        </div>
+        <div class="account naver">
+          <img class="img" src="./img/naver-logo.svg" alt="naver">
+          <span class="account_name">네이버 계정으로 로그인</span>
+        </div>
+        <div class="account kakao">
+          <img class="img" src="./img/message-circle.svg" alt="">
+          <span class="account_name">카카오톡 계정으로 로그인</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

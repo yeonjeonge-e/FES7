@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+
+    //  원래 console 앞에는 window가 붙어야 맞는데 생략이 가능해서 안쓰는 것
+    //  console.log() = window.console.log();
+
+    // 자주 사용하는 console 종류
+    console.clear()       // 콘솔창 청소해줌
+
+    console.dir()         // 가지고 있는 요소(.점으로 찍어서 접근할 수 있는 요소)를 보여줌
+
+    console.log()         // 콘솔창에 출력
+    let data = { a: 1, b: 2, c: 3 }
+    console.table(data)   // 테이블 형태로 출력됨
+
+    console.group('one')
+    console.log('호준/팀원')
+    console.log('길동/팀원')
+    console.log('춘향/팀원')
+    console.group('two')
+    console.log('철수/팀원')
+    console.log('영희/팀원')
+    console.groupEnd()
+    console.log('갑돌이/팀장')
+    console.groupEnd()
+    console.log('End')
+
+    console.group('one')
+    console.log('1')
+    console.log('2')
+    console.log('3')
+    console.groupEnd()
+    console.group('two')
+    console.log('1')
+    console.log('2')
+    console.log('3')
+    console.groupEnd()
+
+    console.group('one')
+    console.log('1')
+    console.log('2')
+    console.log('3')
+    console.group('three')
+    console.log('3.1')
+    console.log('3.2')
+    console.groupEnd()
+    console.groupEnd()
+    console.group('two')
+    console.log('1')
+    console.log('2')
+    console.log('3')
+    console.groupEnd()
+
+
+
+    // 디버깅 : 버그를 잡는 것
+    console.group('one')                    //  one이라는 그룹 안에 for문 2개를 다 넣었음
+    for (let i = 0; i < 3; i++) {           //  i가 0부터 2까지 3번 도는 for문
+      console.log(i)
+      console.group('two')                  //  group(two) 를 3번 반복시킴
+      for (let j = 0; j < 10; j++) {
+        console.log(j)
+      }
+      console.groupEnd()
+    }
+    console.groupEnd()
+
+
+
+    console.error('에러발생')
+    console.warn('경고발생')
+    console.info('정보')
+
+
+    // (참고) %c -> node.js util.format() flags 키워드로 검색했습니다.
+
+
+    // 잊으셔도 괜찮습니다.
+    console.log("%chello world", "color:red;font-size:32px");
+    console.log(
+      "%chello world%chello",
+      "color:red;font-size:32px",
+      "color:blue;font-size:16px"
+    );
+    // https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+  </script>
+</body>
+
+</html>

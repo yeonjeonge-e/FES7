@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope</title>
+</head>
+
+<body>
+  <script>
+    //  Scope
+    //  변수의 접근성과 생존 기간을 제어하는 ‘생존 범위’를 의미
+
+    const func1 = function () {
+      var a = 1;
+      var b = 2;
+
+      console.log(a + b);
+    };
+
+    var a = 20;
+    //  위 a의 값은 무시되고 있음
+
+    func1();
+
+    //  결과값 : 3
+
+
+
+    const func1 = function () {
+      var b = 2;
+
+      console.log(a + b);
+    };
+
+    var a = 20;
+
+    func1();
+
+    //  결과값 : 22
+    //  fun1 함수 안에 a의 값이 없으므로 a의 값을 찾음
+
+
+    
+  </script>
+</body>
+
+</html>

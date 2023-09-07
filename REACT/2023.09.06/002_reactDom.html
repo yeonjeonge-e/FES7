@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 아래와 같은 코드를 작성하고 싶음 -->
+  <h1 class="greeting">
+    hello
+    <li>
+      world
+    </li>
+    . Welcome!
+  </h1>
+
+  <!-- 1. 처음 리액트가 나왔을 땐 아래와 같은 코드로 작성함 - 가독성도 안좋고 코드가 너무 긺 -->
+  <script>
+    function greeting() {
+      document.createElement('hi');
+      h1.classList.add('greeting');
+      h1.appendChild(document.createTextNode('hello'));
+
+      const elLi = document.createElement('li');
+      elLi.appendChild(document.createTextNode('world'));
+
+      h1.appendChild(elLi);
+      h1.appendChild(document.createTextNode('. welcome'));
+
+      return h1;
+    }
+
+  </script>
+</body>
+
+</html>

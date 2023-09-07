@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>승무 샵</title>
+  <link rel="stylesheet" href="../reset.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const data = fetch("http://test.api.weniv.co.kr/mall")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+
+
+    // const Items = () => {
+    //     const itemMenu = data.map((item) => {
+    //         let price = item.price
+    //         let itemName = item.productName
+    //     })
+    //     return (
+    //         <div>
+    //             <div>{price}</div>
+    //             <div>{itemName}</div>
+    //         </div>
+    //     )
+    // }
+
+    // const app = () => {
+    //     return (
+    //         <div>
+    //             <Items data={data} />
+    //         </div>
+
+    //     )
+    // }
+
+
+
+    const Product = (props) => {
+      return (
+        <div>
+          <Card goods={props.data} />
+        </div>
+      )
+    }
+
+
+
+    // const Card = (props) => {
+    //   props.goods.then((result) => {
+    //     const itemMenu = result.map((item) => {
+    //       return (<div>
+    //         <h3>{item.price}</h3>
+    //         <p>{item.productName}</p>
+    //       </div >)
+    //     })
+    //     console.log(result)
+    //     console.log()
+    //     console.log(result[0].price)
+    //     return (
+    //       <div>
+    //         {itemMenu}
+    //       </div>
+    //     )
+    //   })
+    // }
+
+
+
+    const Card = (props) => {
+      let answer = [];
+      props.goods.then((result) => {
+        const itemMenu = [];
+        for (let i = 0; i < result.length; i++) {
+          answer.push(result[i].price)
+          itemMenu.push(result[i].productName)
+        }
+        return (
+          <div>
+            <h1>ㅎㅇㅎㅇ</h1>
+            {itemMenu}
+          </div>
+        )
+      })
+      console.log(answer)
+      return (
+        <div>
+          {answer}
+        </div>
+      )
+    }
+
+
+
+    const body = (
+      <div>
+        <Product data={data} />
+      </div>
+    );
+    const root = ReactDOM.createRoot(document.querySelector('#root'));
+    root.render(body)
+  </script>
+</body>
+
+</html>

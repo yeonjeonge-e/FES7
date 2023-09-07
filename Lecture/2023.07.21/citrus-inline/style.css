@@ -1,0 +1,94 @@
+.wrapper {
+  box-shadow: inset 0 0 28px red;
+  /* outline 은 공간차지를 안함 - 하지만 방향이 잘 안보임 ? */
+  width: 800px;
+  /* 원래는 가득차는 블록레벨 특성이 800까지만 자리를 차지함 */
+  margin: 100px auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /*  margin: auto;는 무엇입니까? 아떤 개념임니까 ?
+    - 어벨러블 스페이스를 브라우저가 계산해서 나눠줌
+    - margin은 상하단 auto는 안된다
+      why?  블록레벨의 한줄을 다 차지하면 그 다음줄은 그 다음 블록이 자리를 차지해야함
+            다른 블록의 위치 차지를 하면 안됨 */
+  /* margin: auto auto;
+  상하단 auto를 사용하는 경우도 있음 */
+
+  text-align: center;
+}
+
+*.fruit {
+  /* * : universial selector */
+  background-color: gold;
+  display: inline-block;
+  width: 200px;
+  /* width는 상속이 안됨 */
+  height: 200px;
+  /* height는 상속이 안됨 */
+  vertical-align: baseline;
+  line-height: 200px;
+  /* 기본값 : normal / 텍스트 위치 조정 */
+  border-radius: 50%;
+}
+
+/* 인라인 앨리먼트는 상하단 패딩이 공간을 차지하지 않음
+  - 시각적으로는 보임
+  - 좌우 공간은 차지함  */
+/* inline 앨리먼트는 텍스트 기준인데 텍스트가 사라지면 공간이 뜸  */
+/* html 마크업 : 컨텐츠를 담는 그릇의 용도 */
+
+/* vertical-align
+  - 인라인은 margin도 포함해서 위치를 맞춤 */
+
+
+/*  a태그 사이에 빈 틈이란?
+    - 인라인 형식에서 나오는 자연스러운거임
+    - 엔터로 생기는 건데 없애고 싶으면
+      a태그 다음에 a태그 올 때 엔터를 안치면 빈 틈 안생김 */
+
+
+/*
+.wrapper a.sliver {
+  background-color: silver;
+}
+
+.wrapper a.gold {
+  background-color: gold;
+  height: 400px;
+}
+
+.wrapper a.bronze {
+  background-color: burlywood;
+  height: 100px;
+}
+*/
+
+/* 
+.fruit:nth-child(1) {
+  background-color: lemonchiffon;
+}
+
+.fruit:nth-child(2) {
+  background-color: orange;
+}
+
+.fruit:nth-child(3) {
+  background-color: orangered;
+}
+
+이런식으로 nth:child()로 해주면 유지보수도 어렵고 복잡
+- 해결방법 : 클래스 사용
+*/
+
+.fruit.lemon {
+  /* 이랗게 설정하면 fruit이면서 remon둘 다 선택 */
+  background-color: antiquewhite;
+}
+
+.fruit.orange {
+  background-color: orange;
+}
+
+.fruit.jamong {
+  background-color: orangered;
+}

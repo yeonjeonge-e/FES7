@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clamp()</title>
+  <style>
+    .px {
+      font-size: 20px;
+    }
+
+    .px40 {
+      font-size: 40px;
+    }
+
+    .clamp {
+      background-color: gold;
+      font-size: clamp(20px, 2.5vw, 40px);
+      /* 1vw =  부포트 너미 * 0.01 */
+
+      /* 500px x 0.025 = 12.5px */
+      /* 1000px x 0.025 = 25px */
+    }
+
+    .px40 {
+      font-size: 40px;
+    }
+
+
+    div {
+      width: clamp(100px, 20vw, 400px);
+      background-color: rosybrown;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="px">안녕하세요</p>
+  <p class="clamp">안녕하세요</p>
+  <p class="px40">안녕하세요</p>
+
+  <div>box</div>
+</body>
+
+</html>

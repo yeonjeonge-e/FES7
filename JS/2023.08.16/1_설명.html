@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전개구문, 디스트럭쳐링</title>
+</head>
+
+<body>
+  <script>
+      ★ 전개구문(...) ★
+    - 배열이나 객체와 같은 데이터 구조를 확장할 때 사용하는 문법
+
+    1. 배열의 전개 구문
+      - 대괄호([]) 안에서 세 개의 점(...)을 사용하여 배열을 확장
+
+    const 과일들 = ['사과', '파인애플', '수박'];
+    const 합치면 = [...과일들];
+
+    console.log(합치면);
+
+    // 출력값 : (3) ['사과', '파인애플', '수박']
+
+
+    2. 객체의 전개 구문
+      - 중괄호({}) 안에서 세 개의 점(...)을 사용하여 객체를 확장
+  </script>
+
+
+
+  <script>
+    ★ 디스트럭쳐링 ★
+    - 구조를 해체하는 행위를 뜻함
+      - 배열이나 객체와 같은 데이터 구조를 분해하여 변수에 할당하는 표현식
+
+    // 예제 1
+    let obj = { one: 1, two: 2 };
+    let myNum = obj.one;
+    console.log(myNum);
+
+    // 예제 2
+    let obj = { one: 1, two: 2 };
+    let { one: myNum } = obj;
+    console.log(myNum);
+
+    //  예제 1, 2의 출력값은 둘 다 1 출력
+
+    ★ 객체 리터럴 ★
+    - 객체 리터럴로서의 { one: myNum } 구문은 one 이 데이터의 이름을, myNum 이 데이터의 값
+
+    ★ 디스트럭쳐링 ★
+    - 디스트럭쳐링의 { one: myNum } 구문은 myNum 이 데이터의 이름을, one 이 데이터의 값
+  </script>
+</body>
+
+</html>

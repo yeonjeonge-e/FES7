@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커비 실습</title>
+  <style>
+    body,
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      background-image: url(./링우드_형무소.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .character {
+      width: 50px;
+      height: 50px;
+      margin: auto auto;
+      border-radius: 50px;
+      background-color: pink;
+    }
+
+    .character::before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: black;
+      transform: translate(30px, 13px);
+    }
+
+    .character::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 20% 20% 100% 40%;
+      background-color: palevioletred;
+      transform: translate(30px, 20px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="character"></div>
+  <script>
+    const character = document.querySelector('.character');
+    let curPositionX = 0;
+    let curPositionY = 0;
+    let move = 5;
+
+    window.addEventListener('keydown', (e) => {
+      // console.log(e);
+      if (e.key === 'ArrowRight') {
+        curPositionX += move;
+        character.style.transform = `translate(${curPositionX}px, ${curPositionY}px)`;
+      }
+      if (e.key === 'ArrowLeft') {
+        curPositionX -= move;
+        character.style.transform = `translate(${curPositionX}px, ${curPositionY}px)`;
+      }
+      if (e.key === 'ArrowDown') {
+        curPositionY += move;
+        character.style.transform = `translate(${curPositionX}px, ${curPositionY}px)`;
+      }
+      if (e.key === 'ArrowUp') {
+        curPositionY -= move;
+        character.style.transform = `translate(${curPositionX}px, ${curPositionY}px)`;
+      }
+    });
+  </script>
+</body>
+
+</html>

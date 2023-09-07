@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+</head>
+
+<body>
+  <script>
+    //  JSON ?
+    //  - JSON(JavaScript Object Notation)
+    //  - 자바스크립트 객체 형식으로 데이터를 표현하는 문자 기반의 표준 포맷
+
+    //  JSON 메서드
+    //  - JSON.parse()  : JSON문자열을 자바스크립트 객체로 변환
+    //  - JSON.stringify()  : 자바스크립트 객체를 JSON문자열로 변환
+
+    const json = '{"result":true, "count":42}';
+    const obj = JSON.parse(json);
+    console.log(obj);
+    //  출력값  : {result: true, count: 42}
+
+
+
+    const json2 = '[1, 2, 3]';
+    //  배열 형태도 지원함
+    const obj2 = JSON.parse(json2);
+    console.log(obj2);
+    //  출력값 : (3) [1, 2, 3]
+
+
+
+    const json3 = '[1, 2, [1, 2, 3]]';
+    const obj3 = JSON.parse(json3);
+    console.log(obj3);
+    //  출력값  : (3) [1, 2, Array(3)]
+
+
+
+    const obj4 = { "result": true, "count": 42 }
+    const json4 = JSON.stringify(obj4);
+    console.log(json4);
+    //  출력값  : {"result":true,"count":42}
+
+
+    // JSON을 이용한 깊은 복사
+    // l 객체를 문자열화 했다가 다시 객체로 변환하기 때문에 새로운 객체를 생성하는것과 동일합니다. 하지만 함수는 제대로 복사가 불가능하다는 단점이 있습니다. 제대로된 깊은 복사를 위해서는 structuredClone 메소드를 사용해야합니다.
+    let l = [10, 20, 30];
+    let a = JSON.parse(JSON.stringify(l));
+    a[0] = 1000;
+
+    console.log(l);
+    //  출력값  : (3) [10, 20, 30]
+
+    // Ajax 통신을 통해 슈퍼히어로 Json 데이터를 받아봅시다!
+  </script>
+</body>
+
+</html>

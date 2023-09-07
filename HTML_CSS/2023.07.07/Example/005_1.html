@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마진병합 현상 해결방법</title>
+  <style>
+    #gradient {
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      border: 30px solid;
+      /* 뒤에 색상은 아래에서 지정해줌 */
+      /* border-image: repeating-linear-gradient(45deg, rgba(0, 131, 255, 1) 0%, rgba(9, 9, 121, 1) 19%, rgba(2, 161, 221, 1) 19%, rgba(-1, 131, 255, 1) 32%, rgba(0, 212, 255, 1) 32%, rgba(0, 212, 255, 1) 40%, rgba(0, 114, 255, 1) 39%, rgba(0, 114, 255, 1) 98%, rgba(0, 114, 255, 1) 98%) 30; */
+      border-image: repeating-linear-gradient(30deg, #4d9f0c, #9198e5, #4d9f0c 20px) 60;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="gradient">
+    gradient border-image
+  </div>
+</body>
+
+</html>
+
+<!--
+  width - 요소(텍스트&사진)의 너비 지정
+  height - 
+-->

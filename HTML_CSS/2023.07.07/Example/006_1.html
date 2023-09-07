@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box1,
+    .box2 {
+      width: 300px;
+      height: 300px;
+      background: royalblue;
+      color: #fff;
+      font-size: 24px;
+      border: 10px solid #000;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .box1 {
+      background: royalblue;
+    }
+
+    .box2 {
+      background: seagreen;
+      box-sizing: border-box;
+      /*
+        ★ box-sizing ★
+        - width, height에 border, padding  포함
+        - width = 콘텐츠 너비 + border + padding
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    Box1<br />
+    크기 360px <br />=
+    300px (width 값)<br />
+    + 20px * 2 (padding 값)<br />
+    + 10px * 2 (border 값)
+  </div>
+  <div class="box2">
+    Box2<br />
+    크기 300px
+  </div>
+</body>
+
+</html>

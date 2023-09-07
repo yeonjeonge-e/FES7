@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string</title>
+</head>
+
+<body>
+  <script>
+    let s = 'abcdefghij'
+    console.log(s.length)             //  10
+    //  length : 문자열의 길이 나타내줌
+    console.log(s.toUpperCase())      //  ABCDEFGHIJ
+    console.log(s.toLowerCase())      //  abcdefghij
+    // toUpperCase 뒤에 ()가 있는 것은 이 함수가 작용을 하겠다 라는 뜻 - 안적어주면 실행 안됨
+
+
+    //  존재하는 값을 찾았을 때
+    console.log(s.indexOf('c'))       //  2
+    console.log(s.search('c'))        //  2
+    // 위 두 코드의 차이점?
+    //  - ★ 모르겠음 ★
+
+    //  존재하지 않는 값을 찾았을 때
+    console.log(s.indexOf('z'))       //  -1
+    console.log(s.indexOf(-100))      //  -1
+    console.log(s.search('z'))        //  -1
+    console.log(s.search(-100))       //  -1
+
+
+    //  정규표현식을 넣었을 때
+    //  (indexOf 같은 경우에는 정규표현식을 허용하지 않는다)
+    console.log(s.indexOf(/cd/g))       //  -1
+    //  정규표현식을 허용하지 않아서 값이 -1이 나오는건가 ?★ 모르겠음 ★
+    console.log(s.search(/cd/g))        //  2
+
+
+
+    //  ★ 모르겠음 ★
+    let ss = 'paullab CEO 이호준 CTO 김창영'
+    console.log(ss.indexOf('C', 11))    //  16
+    //  'C' 라는 문자열을 11번째 위치 이후에서 찾기
+    console.log(ss.search(/C/g))        //  8
+    console.log(ss.search(/CTO/g))      //  16
+
+  </script>
+</body>
+
+</html>
+
+
+<!-- 
+  버전
+
+  indexOF ECMAScript 5
+  검색 위치 지정 가능
+
+  search ECMAScript 1
+  정규표현식 가능
+  검색 위치 지정 가능 기능
+-->
+
+<!-- 
+  g 글로벌
+  m 멀티라인
+-->

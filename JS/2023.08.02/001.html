@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String 메서드</title>
+</head>
+
+<body>
+  <script>
+    let s = 'paullab CEO 이호준';
+    let ss = 'CTO 김창영';
+    let sss = 'paullab CEO 이호준 CTO 김창영 CTO 홍길동';
+
+    // replace
+    console.log(s.replace('CEO', 'CFO'));             //  paullab CFO 이호준
+    // 변수 s에서 'CEO' 문자열을 찾아서 'CFO'로 변경해주기
+    console.log(sss.replace(/C[ET]O/g, '잡부'));      // paullab 잡부 이호준 잡부 김창영 잡부 홍길동
+
+
+
+
+
+    // replace 고급 문법 //
+    const string = `hojun, lee
+                    gildong, hong
+                    hojung, choi
+                    junho, lee`
+
+
+    let result1 = string.replace(/(\w+), (\w+)/gm, "$1 $2");
+    console.log(result1)
+    // hojun lee
+    // gildong hong
+    // hojung choi
+    // junho lee
+
+    let result2 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+    console.log(result2)
+    // lee hojun
+    // hong gildong
+    // choi hojung
+    // lee junho
+
+    let result3 = string.replace(/(\w+), (\w+)/gm, "제 이름은 $2 제 성은 $1 입니다.");
+    console.log(result3)
+    // 제 이름은 lee 제 성은 hojun 입니다.
+    // 제 이름은 hong 제 성은 gildong 입니다.
+    // 제 이름은 choi 제 성은 hojung 입니다.
+    // 제 이름은 lee 제 성은 junho 입니다.
+
+
+
+    //  replaceAll
+    //  주의) 구 브라우저에서 작동하지 않을 확률이 매우 높다
+    //        caniuse 확인해주기
+    //        21년도에 추가된 기능
+    console.log(sss.replaceAll('CTO', '잡부'));
+
+
+
+
+    // let s = 'paullab CEO 이호준';
+    // let ss = 'CTO 김창영';
+    // let sss = 'paullab CEO 이호준 CTO 김창영 CTO 홍길동';
+
+    // includes
+    ss.includes('CTO');       // true
+    ss.includes('CEO');       // false
+
+
+
+    //  메서드 채이닝
+    //  메서드 채이닝은 길어지면 가독성이 떨어집니다.
+    //  가독성을 위해 개행을 해주면 좋음
+    sss.replace('CEO', 'CFO').includes('CEO').toString().toUpperCase()
+    sss
+      .replace('CEO', 'CFO')
+      .includes('CEO')
+      .toString()
+      .toUpperCase()
+
+
+
+    // split
+    s.split(' ')                      //  (3) ['paullab', 'CEO', '이호준']
+    '010-5044-2903'.split('-')        //  ['010', '5044', '2903']
+    '010-5044-2903'.split(' ')        //  띄어쓰기가 없습니다!
+    '010-5044-2903'.split('') //  ['0', '1', '0', '-', '5', '0', '4', '4', '-', '2', '9', '0', '3']
+
+
+    //  문제  : text1 ~ text4를 split을 사용해서 아래 배열로 만들어주세요.
+    //          ['aa', 'bb', 'cc', 'dd']
+    let text1 = 'aa bb cc dd'
+    let text2 = 'aa-bb-cc-dd'
+    let text3 = 'aa,bb,cc,dd'
+    let text4 = 'aa,bb-cc-dd'
+
+
+    // 해답코드
+    text1.split(' ');      //  ['aa', 'bb', 'cc', 'dd']
+    text2.split('-');      //  ['aa', 'bb', 'cc', 'dd']
+    text3.split(',');      //  ['aa', 'bb', 'cc', 'dd']
+    text4.replace(',', '-').split('-')          //  ['aa', 'bb', 'cc', 'dd']
+    // text4에 원본에 반영되는 것은 아닙니다.    
+    text4.split(/[,-]/)     //  ['aa', 'bb', 'cc', 'dd']    정규화로 푼 것
+
+    let text5 = text4.replace(',', '-')
+    text5.split('-')        //  ['aa', 'bb', 'cc', 'dd']
+
+
+
+
+    // trim
+    // 앞 뒤 공백 제거 메소드
+    let text6 = '    aa bb cc dd    '
+    text6.trim()                    //  'aa bb cc dd'
+    text6.replaceAll(' ', '')       //  'aabbccdd'
+
+
+    // padStart
+    let text7 = '123'
+    text7.padStart(5, '0')          //  '00123'
+
+
+
+
+    // 카카오 입사문제 일부(padStart, replace만 사용)
+    // 우리의 목표: 00101 -> '  # #'
+    let text8 = '101'
+    text8.padStart(5, '0').replaceAll('0', ' ').replaceAll('1', '#')
+
+
+
+    // concat
+    text1.concat(text2)
+  </script>
+</body>
+
+</html>

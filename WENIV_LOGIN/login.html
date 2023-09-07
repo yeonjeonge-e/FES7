@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="./css/login.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <section id="login">
+    <section class="login_form">
+      <h3 class="login_title">로그인 또는 회원가입</h3>
+      <section id="login_execute">
+        <form action="" class="login_contents">
+          <strong class="login_quote">위니브에서 여러분의 궁금증을 해결하세요! :)</strong>
+          <label for="id" class="sr-only">아이디</label>
+          <input id="id" class="login_input" type="text" placeholder="아이디">
+          <strong class="error" id="error_id">아이디를 입력해주세요.</strong>
+          <label for="pw" class="sr-only">비밀번호</label>
+          <input id="pw" class="login_input" type="password" placeholder="비밀번호">
+          <!-- <strong class="error" id="error_pw">비밀번호를 입력해주세요.</strong> -->
+          <strong class="error" id="error_wr">아이디 혹은 비밀번호가 일치하지 않습니다.</strong>
+          <input class="sr-only" id="login_checkbox" type="checkbox">
+          <label class="login_radio-keep-id" for="login_checkbox">로그인 상태 유지</label>
+          <button class="btn btn-login login_btn-login">로그인</button>
+        </form>
+        <article class="login_info">
+          <a href="#">회원가입</a>
+          <a href="#">아이디/비밀번호 찾기</a>
+        </article>
+        <fieldset class="sns_login">
+          <legend class="sns_login-legend">또는</legend>
+          <button type="button" class="btn sns_login_btn" id="google">
+            <a class="accounts"
+              href="https://accounts.google.com/signup/v2/createaccount?continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=SignUp">구글
+              계정으로 로그인</a>
+          </button>
+          <button type="button" class="btn sns_login_btn" id="facebook">
+            <a class="accounts" href="https://m.facebook.com/login/?locale=ko_KR">페이스북 계정으로 로그인</a>
+          </button>
+          <button type="button" class="btn sns_login_btn" id="naver">
+            <a class="accounts" href="https://nid.naver.com/nidlogin.login">네이버 계정으로 로그인</a>
+          </button>
+          <button type="button" class="btn sns_login_btn" id="kakaotalk">
+            <a class="accounts"
+              href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount#login">카카오톡
+              계정으로 로그인</a>
+          </button>
+        </fieldset>
+      </section>
+      <button class="close">
+        <a href="./index.html">
+          <img class="login_close" src="./img/close.svg" alt="close">
+        </a>
+      </button>
+    </section>
+  </section>
+
+</body>
+
+</html>

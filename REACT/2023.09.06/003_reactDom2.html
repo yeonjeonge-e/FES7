@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom2</title>
+</head>
+
+<body>
+  <div id="root" class="container">
+    <h1>hello react</h1>
+    <a href="https:www.test.com">test site</a>
+  </div>
+
+
+  <script>
+    // 아래는 옛날 방식이라 안봐도 됨
+    const tag = {
+      tag: 'div',
+      props: {
+        id: 'root',
+        className: 'container',
+      },
+      children: [
+        {
+          tag: 'div',
+          props: {
+            id: 'root',
+            className: 'container',
+          },
+          children: [
+            {
+              tag: 'div',
+              props: {
+                id: 'root',
+                className: 'container',
+              },
+              children: [
+
+              ]
+            }
+          ]
+        }
+      ]
+    }
+
+
+    // 2. 리액트 사용하여 아래 처럼 코드를 간략하게 짬
+    function helloVdom() {
+      return React.createElement(
+        'h1',
+        { className: 'container' },
+        'hello',
+        React.createElement(
+          'i',
+          null,
+          'welcome!'
+        )
+      );
+    }
+
+
+
+    // JSX 문법
+    // 3. 더 가독성 있게 표현하고 싶어서 jsx 문법을 사용함
+    function helloJSX() {
+      return (
+        <h1 className="container">
+          hello <i>welcome!</i>
+        </h1>
+      )
+    }
+
+  </script>
+</body>
+
+</html>

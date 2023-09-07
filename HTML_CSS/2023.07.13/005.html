@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    button:enabled:hover {
+      background-color: blue;
+    }
+
+    /* active 상태는  hover 보다 뒤에 적어줘야함. */
+    button:enabled:active {
+      background-color: red;
+    }
+
+    /* 마우스 클릭시 보임 */
+    .btn1:focus {
+      border: 5px solid green;
+    }
+
+    /* 마우스 클릭 시에는 안보임 */
+    .btn2:focus-visible {
+      border: 5px solid green;
+    }
+
+    div:focus-within {
+      /*  - 기본적으로 div에는 배경색이 없지만 내 자식 중에 포커스가 있다면 동작
+          - 자식요소에 focus를 줄 수 있는 상황이면 부모에 속성값을 준다는 말 
+          - 발생이 자식 요소고 효과가 부모 */
+      background-color: skyblue;
+      /* 부모의 속성값을 변경해줄건데 그걸 자식의 트리거로 발생 */
+    }
+
+    button:enabled {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button class="btn1" type="button" disabled>버튼</button>
+    <button class="btn2" type="button">버튼</button>
+  </div>
+  <input type="text">
+</body>
+
+</html>

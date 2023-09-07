@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2_1. 구체성의 원칙</title>
+  <style>
+    div #id1 {
+      color: green;
+    }
+
+    p {
+      color: black;
+    }
+
+    #id1 {
+      color: blue;
+    }
+
+    .class {
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p id="id1" class="class">
+      1. 이 글자는 어떤 색일까요?
+    </p>
+    <p id="id2" class="class" style="color:red">
+      2. 이 글자는 어떤 색일까요??
+    </p>
+  </div>
+
+</body>
+
+</html>
+
+
+<!-- 
+  우선 순위 계산
+  1. 인라인 속성 (태그 안에 속성)
+  2. id 값
+  3. class 값
+  4. typr(tag), 가상요소 선택자 (p, div, span 등등 )
+  5. 전체 선택자
+
+
+  2번의 글자색은 인라인 속성을 이용한거라
+  우선 순위가 제일 높다 -- 레드
+
+  1번은 
+ -->

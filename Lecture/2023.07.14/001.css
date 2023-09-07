@@ -1,0 +1,50 @@
+div {
+  background-color: orange;
+  /* 블록 레벨의 엘리먼트 */
+  /* 부모가 제공해주는 컨텐츠 영역의 크기 == 컨테이닝 블럭 */
+  /* 부모의 마진 제외한 컨텐츠 영역
+  /* backgraound-color : transparent (초기값) */
+  width: auto;
+  /* 너비를 정하는 속성 : width (property-속성) / value(값) */
+  /* width가 지정되지 않았을 땐 - auto 라고 지정이 되어 있음 */
+  /* backgrounf-color:  (초기값) */
+
+  /*  초기값 initial value
+      == 모든 초기값이 auto는 아님 */
+
+  /* Q. 그럼 width 나 background-color 말고도 모든 속성들이 초기 값이 다 정해져있는건가요?
+        정답 ! */
+
+  height: auto;
+  /* auto : 콘텐츠 영역 */
+  /*  내가 사이즈를 정하는 것 보다 나중에 레이아웃을 추가하면 자연스럽게 늘어나는게 제일 베스트
+      - 특별히 지정해줘야 하는 상황 제외 */
+
+  margin-left: 50px;
+  /* maigin 초기값 : 0 */
+  /* Q. width: auto; / width: 100% 차이가 있나요?
+        변화없음.
+        근데 완전히 같지는 않음
+        why?  auto는 margin,border,padding을 다 고려해주고,
+              100%는                      을 고려해주지 않음    그냥 그런거구나 하고 이해해야함
+              
+              box-sizing:border-box : margin은 해당안됨 */
+  /* width가 지정 되지 않았을 때 어떠한 value가 지정되어 있나요 ?
+     width가 제공해주는 ~ */
+
+  padding: 40px;
+  /*  width:100% + padding:40px == width+padding이라 커짐
+      width:auto; + padding:40px == 안커짐 */
+
+  display: none;
+  /* 초기값 : inline */
+  /* Q. display 초기값은 inline이다.
+      하지만 div같은 경우는 그룹핑 목적이기 때문에 브라우저(크롬)가 판단해서 block으로 처리한다. 
+      이렇게 이해하면 될까요??
+    -- 정답 */
+
+}
+
+/* Q. 100vw랑 100%랑 똑같이 동작하나요?
+      vw == 뷰포트 (body 위에 있음 - 창 전체)
+      px == 컨테이너 블록 */

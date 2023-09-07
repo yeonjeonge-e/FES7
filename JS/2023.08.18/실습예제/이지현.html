@@ -1,0 +1,93 @@
+<title>paint rect</title>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    list-style: none;
+  }
+
+  .wrap {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    gap: 10px;
+  }
+
+  .canvas {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: auto;
+  }
+
+  .btns {
+    margin: 5px auto;
+  }
+
+  .btns li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgb(134, 128, 128);
+    border-radius: 8px;
+    margin: 5px;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .colors-red {
+    background-color: red;
+  }
+
+  .colors-yellow {
+    background-color: yellow;
+  }
+
+  .colors-green {
+    background-color: green;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="canvas"></div>
+    <ul class="btns">
+      <li><button class="paint-rect">red</button></li>
+      <li><button class="paint-rect">yellow</button></li>
+      <li><button class="paint-rect">green</button></li>
+    </ul>
+  </div>
+  <script>
+    const btn = document.querySelectorAll(".paint-rect");
+    const canvas = document.querySelector(".canvas");
+    function makeColorful(e) {
+
+      btn.forEach((x, i) => {
+        canvas.classList.remove(`colors-${x.innerText}`);
+        //  classList.remove : 클래스를 지우는 것
+        //  innerText : x 요소 안에 들어있는 텍스트요소
+      });
+      //  forEach문 콜백함수의 첫번째 인자 - 버튼(빨간색)
+
+
+      // 이 코드가 위에 forEach문 코드와 같은 것
+      //  forEach문은 안쓸수록 좋음
+      canvas.classList.remove('colors-red', 'colors-green', 'colors-yellow');
+
+      const newClass = e.target.innerText;
+      canvas.classList.add(`colors-${newClass}`);
+    }
+    btn.forEach((x, i) => {
+      x.addEventListener("click", makeColorful);
+    });
+  </script>
+</body>
+
+</html>

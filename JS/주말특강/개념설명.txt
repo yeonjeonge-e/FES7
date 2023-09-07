@@ -1,0 +1,86 @@
+메소드
+- 객체안의 함수
+
+document
+- 문서 전체 의미
+
+apl
+-내가 프로그래밍 하는데 도움을 주는 것
+
+쿼리셀렉터 메서드
+- 쿼리 선택하는 메서드
+
+변수
+- let const var
+
+함수
+- 입력이 있으면 출력(행동)이 있는 것
+
+function 첫번째공바꾸기(numStr){
+    const ball1 = document.querySelector("#main_pack > div.sc_new.cs_lotto._lotto > div > div.content_area > div > div > div:nth-child(2) > div.win_number_box > div > div.winning_number > span:nth-child(1)")
+    ball1.innerHTML = numStr
+}
+
+함수를 만들건데 이름은 첫번째공바꾸기이고 numStr이라는 값을 넣을거야....
+8. 이주연 — 오늘 오전 10:07
+function으로 함수 선언
+2.이름은  첫번째공바꾸기!
+들어가는 값의 이름은 numStr 으로 정함
+
+이 함수를 실행하면
+ball1 이라는 변수가 생성됨
+ball1에는 쿼리쉘렉터코드가 할당되어있음
+ball1.이 가리키는 HTML에 numStr값이 반영
+
+변수는 일부러 함수 내부에 선언해주신건가요?? - 맞음
+
+
+
+
+function 첫번째공바꾸기(numStr){
+    const ball1 = document.querySelector("#main_pack > div.sc_new.cs_lotto._lotto > div > div.content_area > div > div > div:nth-child(2) > div.win_number_box > div > div.winning_number > span:nth-child(1)")
+    ball1.innerHTML = numStr
+}
+
+위 함수를 이벤트 리스너에 적용시킬거야
+
+- 로또 공을 클릭하는걸 인식해야함
+- 그리고 인식이 되면 만들어준 함수에 값을 입력할수도 있어야함
+- 값을 입력하면 화면의 공 숫자가 바뀜
+
+
+function 클릭했을때() {
+  // console.log("클릭됨");
+  const numStr = prompt("로또번호를 입력하세요")
+  첫번째공바꾸기(numStr)
+}
+
+
+
+ball1.addEventListener("click", 클릭했을때) {}
+- 이벤트가 발생했을 때 대신 실행해주는 것
+- 콜백함수 (야 내가 넘겨줄게 ~ 너가 뒤에서 실행해 ~ 이런 느낌)
+
+
+
+
+
+function 첫번째공바꾸기(numStr){
+    const ball1 = document.querySelector("#main_pack > div.sc_new.cs_lotto._lotto > div > div.content_area > div > div > div:nth-child(2) > div.win_number_box > div > div.winning_number > span:nth-child(1)")
+    ball1.innerHTML = numStr
+}
+
+중요) 함수에서 바뀌는값과 바뀌지 않는 값을 구분하여
+바뀌는 값을 파라미터로 주는게 좋음 !
+
+
+
+
+
+
+
+
+
+
+
+

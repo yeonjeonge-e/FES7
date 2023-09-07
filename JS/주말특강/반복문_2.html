@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+
+  <!-- Switch -->
+  <script>
+    let a = 2 + 2;
+
+    switch (a) {
+      case 3:
+        alert('비교하려는 값보다 작습니다.');
+        break;
+      case 4:
+        alert('비교하려는 값과 일치합니다.');
+        break;
+      case 5:
+        alert('비교하려는 값보다 큽니다.');
+        break;
+      default:
+        alert("어떤 값인지 파악이 되지 않습니다.");
+    }
+
+    // switch (a) {} 에서 괄호안에 있는 값과 case문의 값을 비교 
+
+    // switch문을 if문으로 변경해보기
+    let a = 2 + 2;
+    if (a === 3) {
+      alert('비교하려는 값보다 작습니다');
+    } else if (a === 4) {
+      alert('비교하려는 값과 일치합니다.')
+    } else if (a === 5) {
+      alert('비교하려는 값보다 큽니다')
+    } else {
+      alert('어떤 값인지 파악이 되지 않습니다.')
+    }
+
+
+
+    let a = 2 + 1;
+
+    switch (a) {
+      case 3:
+        alert('틀렸습니다.');
+        break
+      case 4:
+        alert('비교하려는 값과 일치합니다.');
+        break;
+      case 5:
+        alert('틀렸습니다.');
+        break;
+      default:
+        alert("어떤 값인지 파악이 되지 않습니다.");
+    }
+
+
+    // let a = 3;
+
+    // switch (a) {
+    //   case 4:
+    //     alert('계산이 맞습니다!');
+    //     break;
+
+    //   case 3: // (*) 두 case문을 묶음
+    //   case 5:
+    //     alert('계산이 틀립니다!');
+    //     alert("수학 수업을 다시 들어보는걸 권유 드립니다.");
+    //     break;
+
+    //   default:
+    //     alert('계산 결과가 이상하네요.');
+    // }
+  </script>
+
+
+
+
+
+  <!-- 조건(삼항)연산자 & 함수 -->
+  <script>
+    function getFee(isMember) {
+      //  isMember === 파라미터
+      return isMember ? '$2.00' : '$10.00';
+      //  파라미터값을 이요해 식이 실행되고 리턴됨
+      //  파라미터에 true가 들어가게 되면 true는 아규먼트가 되는 것
+    }
+
+    console.log(getFee(true));
+    // Expected output: "$2.00"
+
+    console.log(getFee(false));
+    // Expected output: "$10.00"
+
+    console.log(getFee(null));
+    // Expected output: "$10.00"
+
+
+
+    // 삼항연산자 -> if문
+    function getFee(파라미터) {
+      return 파라미터 ? '$2.00' : '$10.00';
+    }
+
+
+    function getFee(파라미터) {
+      if (파라미터) {
+        return '$2.00';
+      } else {
+        return '$10.00';
+      }
+    }
+    //  여기에서 console.log()로 실행하면 undefined이 실행됨
+    //  why)  파라미터에 true가
+    //        if 뒤 ()에는 조건식이 들어가야 하는거 아닌가요?
+    //        -- true/false로 나타낼 수 있는 모든 값이 들어가는 것
+
+  </script>
+
+
+
+
+
+  <!-- 고급 스킬 (return 활용법)
+    return 은 값을 돌려주기도 하지만
+    return 을 만나면 함수가 종료된다.
+  -->
+  <script>
+
+    // index 0 ~ 99 까지 실행
+    function checkNum(파라미터) {
+      for (let index = 0; index < 100; index++) {
+        console.log(index);
+        if (파라미터 == index) {
+          console.log("범위안에 값이 있습니다.");
+        }
+      }
+      return "아 끝났다"
+    }
+
+    console.log(checkNum(30));
+
+
+    //  ------------------------------
+
+
+    // index 0 ~ 30 까지 실행
+    function checkNum(파라미터) {
+      for (let index = 0; index < 100; index++) {
+        console.log(index);
+        if (파라미터 == index) {
+          console.log("범위안에 값이 있습니다.");
+          return "빨리 끝났다";
+        }
+      }
+      return "아 끝났다"
+    }
+
+    console.log(checkNum(30));
+
+  </script>
+
+</body>
+
+</html>

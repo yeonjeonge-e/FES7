@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .ratio img {
+      /* width: 300px; */
+      width: 30%;
+      /* 30% == 부모의 바디 기준 */
+      aspect-ratio: 2/1;
+      /* 2:1 비율로 설정 */
+      object-fit: cover;
+      /* 위와 같이 비율만 설정해주면 img 비율이 깨져서 나오는걸 방지해주는 코드 */
+      /* 2:1로 비율 설정 후 object-fit: cover; 설정을 해주면 캐릭터들만 확대되고 배경이 잘림 ! --- 이후에 1/1로 변경도 가능 */
+
+      /* cover : 이미지에 맞게 핏 되게 잘라주는 것 */
+      /* contain : 이미지가 핏되게 잘리지 않고 형태로만 잘리는 것 ? */
+
+      /* 
+      브라우저가 이미지 크기는 원본 비율을 유지하는 쪽으로 가는데, cover의 경우 이미지의 길이나 높이 중 더 짧은 부분에 대해 비례하여 확대해 넣어주는 거에요!
+      */
+    }
+
+
+
+    .thumb {
+      width: 300px;
+      display: inline-block;
+    }
+
+    .thumb div {
+      position: relative;
+      height: 0;
+      padding-top: 30%;
+      /* overflow: hidden; */
+    }
+
+    .thumb div img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ratio">
+    <img src="./images/weniv-binky.png" alt="토끼 빙키">
+    <img src="./images/weniv-chilli.png" alt="다람쥐 칠리">
+    <img src="./images/weniv-garry.png" alt="개구리 개리">
+    <img src="./images/weniv-licat.png" alt="라이캣">
+    <img src="./images/weniv-suri.png" alt="수리">
+    <img src="./images/weniv-wade.png" alt="웨이드">
+  </div>
+
+  <div>
+    <div class="thumb">
+      <div><img src="./images/weniv-binky.png" alt="토끼 빙키" /></div>
+    </div>
+    <div class="thumb">
+      <div><img src="./images/weniv-chilli.png" alt="다람쥐 칠리" /></div>
+    </div>
+    <div class="thumb">
+      <div><img src="./images/weniv-garry.png" alt="개구리 개리" /></div>
+    </div>
+    <div class="thumb">
+      <div><img src="./images/weniv-licat.png" alt="고양이 라이캣" /></div>
+    </div>
+    <div class="thumb">
+      <div><img src="./images/weniv-suri.png" alt="수달 수리" /></div>
+    </div>
+    <div class="thumb">
+      <div><img src="./images/weniv-wade.png" alt="나무늘보 웨이드" /></div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

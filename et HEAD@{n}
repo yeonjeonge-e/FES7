@@ -1,0 +1,27 @@
+[33m210c65a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD^
+[33m767e56e[m HEAD@{1}: commit: 캐릭터 그리기
+[33m210c65a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{2}: commit: 캐릭터 그리기
+[33m89dfdb8[m HEAD@{3}: commit: 캐릭터 그리기
+[33m112cd69[m HEAD@{4}: commit: 캐릭터 그리기
+[33m994403c[m HEAD@{5}: commit: 캐릭터 그리기
+[33ma675dca[m HEAD@{6}: commit: 0720 수업
+[33m1f37b25[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{7}: commit: 0719 수업
+[33mb5e43f8[m HEAD@{8}: commit: CSS 과제
+[33m6eef682[m HEAD@{9}: commit: 수업코드
+[33m26a6a0a[m HEAD@{10}: commit: 표 만들기
+[33md5eb9d2[m HEAD@{11}: commit: css강의
+[33m4fa4e7e[m HEAD@{12}: commit: 0713
+[33m5f7fbc6[m HEAD@{13}: commit: 0712
+[33mc23a265[m HEAD@{14}: commit: 0711
+[33m6d8a007[m HEAD@{15}: commit: 카드만들기
+[33maf088f6[m HEAD@{16}: commit: 0711
+[33m61c6f08[m HEAD@{17}: commit: commit
+[33m30bef74[m HEAD@{18}: commit: commit
+[33m5d68cac[m HEAD@{19}: commit: commit
+[33me8ba01d[m HEAD@{20}: commit: commit
+[33mcd48765[m HEAD@{21}: commit: commit
+[33ma0594a5[m HEAD@{22}: commit: commit
+[33m26415c5[m HEAD@{23}: Branch: renamed refs/heads/main to refs/heads/main
+[33m26415c5[m HEAD@{25}: commit: commit
+[33m170f13e[m HEAD@{26}: Branch: renamed refs/heads/main to refs/heads/main
+[33m170f13e[m HEAD@{28}: commit (initial): first.commit

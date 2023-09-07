@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 번호 만들기</title>
+</head>
+
+<body>
+  <script>
+    function lottoGenerator() {
+      const lottoArr = [];
+      //  lottoArr 안에는 숫자 6개가 들어감
+
+      // 6번 돌아가는 반복문 생성
+      while (lottoArr.length < 6) {
+        //  lottoArr의 길이가 6보다 작을때 까지 돌리기
+
+        const result = parseInt(Math.random() * 45 + 1);
+        //  1부터 45까지 출력되게 하는건데 시작은 0부터니까 !
+        //  1 - 44.9999 라는 숫자가 나오는데 1을 더해주면 45.9999 임
+        //  - 여기에서 소수점은 버리고 정수만 필요하니까 parseInt 써주기
+        //  1부터 45까지의 숫자를 랜덤으로 생성
+
+        //  lottoArr에 내가 뽑은 숫자가 들어가 있는지 확인
+        //  - 로또 번호가 반복으로 나오면 안되므로 !
+        if (!lottoArr.includes(result)) {
+          //  부정연산자 사용하여 lottoArr.includes(result) 값이 false면 true로 출력되도록 하기
+          lottoArr.push(result);
+          //  false일 경우 출력됨 - if 조건문이 false면 위 코드는 실행조차 안되므로 위에서 부정연산자 사용
+        }
+      }
+
+      return lottoArr;
+    }
+
+    console.log(lottoGenerator());
+
+  </script>
+</body>
+
+</html>

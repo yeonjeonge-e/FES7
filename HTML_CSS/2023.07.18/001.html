@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      /* 상자의 기본적인 사이즈와 배경색 */
+
+      animation: change 10s 1s infinite;
+      /* 다음에 올 색상으로 변경 - 얼마나 실행 - 지연되는 시간 - 무한반복 */
+    }
+
+
+    /*  @keyframse
+    - 두개 이상의 애니메이션 중간 상태 설정
+    - 0%는 시작점, 100%는 종료시점
+    - %가 아닌, from-to로도 사용 가능
+    
+    [ from ~ to 속성 ] 
+    @keyframes animation-name {
+      from {}
+      to {}
+    }
+
+    [ 0% ~ 100% 속성 ]
+      @keyframes animation-name {
+        0% {}
+        50% {}
+        100% {}
+      }
+*/
+    @keyframes change {
+      10% {
+        scale: 0;
+        /* 효과 크기 */
+        background-color: red;
+      }
+
+      50% {
+        scale: 0.2;
+        background-color: blue;
+      }
+
+      100% {
+        scale: 1.2;
+        background-color: seagreen;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">box</div>
+</body>
+
+</html>

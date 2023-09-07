@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자 우선순위</title>
+
+  <style>
+    /* 똑같은 선택자에 같은 속성을 줬을 경우,
+          1. 후자 우선의 원칙 뒤에 나오는 CSS가 우선순위가 높다 ★
+          2. 구체성(명시도)의 원칙
+          3. 중요성의 원칙                                 
+          
+              그래서 아래와 같은 p 태그에는 color 색상이 blue로 설정됨 
+      p {
+        color: red;
+      }
+
+      p {
+        color: blue;
+      }
+     */
+
+    #id1 {
+      color: violet;
+    }
+
+    .c1 {
+      color: red;
+      background-color: aqua;
+    }
+
+    p {
+      color: blue;
+    }
+  </style>
+
+</head>
+
+<body>
+  <p class="c1" id="id1" style="color: darkgreen;">선택자 우선순위</p>
+  <!-- 인라인 스타일 : 요소 안에 style 지정해주는 것 -->
+  <p class="c1" id="id1">선택자 우선순위</p>
+  <p>선택자 우선순위</p>
+
+</body>
+
+</html>

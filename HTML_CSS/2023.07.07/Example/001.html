@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- CSS 선택자 우선순위 -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. 후자우선의 원칙</title>
+  <style>
+    p {
+      color: red;
+    }
+
+    p {
+      color: blue;
+    }
+
+    p {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <p>우선순위</p>
+</body>
+
+</html>
+
+
+<!-- 
+  동일한 선택자에 (p)
+  동일한 속성이 사용되었을 경우 (color:)
+  뒤에 적힌 속성을 따름
+ -->

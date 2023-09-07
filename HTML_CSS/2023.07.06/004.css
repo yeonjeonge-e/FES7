@@ -1,0 +1,9 @@
+.psy {
+  color: rgb(238, 183, 81);
+
+  text-decoration-color: royalblue;
+  text-decoration-line: line-through underline overline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 5px;
+
+}

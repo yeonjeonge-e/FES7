@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+  <style>
+    input[type="text"] {
+      width: 200px;
+    }
+
+    input[type="text"]:enabled {
+      background-color: skyblue;
+    }
+
+    input[type="text"]:disabled {
+      background-color: salmon;
+    }
+
+    input[type="text"]:read-only {
+      border: 2px solid red;
+    }
+
+    input[type="text"]:read-write {
+      border-top: 4px solid purple;
+    }
+
+    input[type="checkbox"]:checked+label {
+      /* + : 뒤에 나오는 형제 선택 */
+      text-decoration: line-through;
+      color: #767676;
+    }
+
+    input[type="email"]:required {
+      border: 1px solid red;
+    }
+
+    input[type="email"]::placeholder {
+      /* placeholder : 가상 요소 선택자라서 :가 두개 붙음 */
+      color: royalblue;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" value="normal enabled/read-write">
+  <!-- read-write : 사용자가 편집할 수 있는 상태 : 쓰기 가능함 -->
+  <input type="text" value="disabled disabled/read-only" disabled>
+  <!-- read-only : 사용자가 편집할 수 없는 상태 : 읽기만 가능함 -->
+  <input type="text" value="readonly enabled/read-only" readonly>
+
+  <br>
+
+  <input type="checkbox" id="chk1">
+  <label for="chk1">
+    동의하십니까?
+  </label>
+
+  <input type="email" placeholder="abcd@abc.com">
+  <input type="email" required>
+</body>
+
+</html>

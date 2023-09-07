@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string</title>
+</head>
+
+<body>
+  <script>
+    // 문자열은 작은 따옴표('')나 큰 따옴표 (""), 빽틱(`)으로 둘러싼 일련의 문자를 가리킨다
+    // 줄바꿈(2개 모두 가능합니다.)
+    let s = 'hello\nworld'
+    // let s = 'hello
+    //         world'     얜 오류뜸
+    console.log(s)
+
+
+    let age = 10
+    console.log(`홍길동의 나이는 ${age}살 입니다.`)         // 홍길동의 나이는 10살 입니다.
+    console.log(`홍길동의 나이는 ${2 * age}살 입니다.`)     // 홍길동의 나이는 20살 입니다.
+    console.log('홍길동의 나이는 ' + age + '살 입니다.')    // 홍길동의 나이는 10살 입니다.
+
+
+    // 순서 출력
+    let name = '홍길동'
+    console.log(name[0])  // 홍
+    console.log(name[1])  // 길
+    console.log(name[2])  // 동
+    console.log(name[3])  // undefined
+    // 자바스크립트에서는 문자열의 순서를 넘어갔을 때 에러가 발생하지 않고 undefined를 출력합니다
+    console.log(name[-1]) // undefined                다른언어에서는 마지막 문자를 출력
+
+
+    // 문자열의 사칙연산
+    console.log('1' + 2 + 3)            //  123       다른언어에서는 error
+    console.log(2 + 3 + '1')            //  51        다른언어에서는 error
+    console.log(2 + 3 + +'1')           //  6         다른언어에서는 error
+
+    // banana = 'b' + 'a' + + 'a";
+    console.log('b' + 'a' + + 'a');     // baNaN      'a' : NaN
+
+    console.log('lee' + 'hojun')        //  leehojun
+    console.log('hojun' * 3)            //  NaN       다른언어에서는 hojunhojunhojun
+
+
+    // 형변환
+    console.log('1' + '1')                          //  11이 아니라 2로 출력되게 하고 싶으면 ?
+    console.log(+'1' + +'1')                        //  2   하지만 권하지는 않음
+    console.log(Number('1') + Number('1'))          //  2   하지만 권하지는 않음
+    console.log(parseInt('1') + parseInt('1'))      //  2   권장함 !!!
+    console.log(parseInt(undefined) + parseInt(undefined))      //  NaN
+
+    console.log(String(1) + String(1))              //  11  권하지 않습니다.
+    // console.log(1.toString() + 1.toString())     //  가능한 코드가 아닙니다.
+    console.log((1).toString() + (1).toString())    //  11  권장함 !!!
+
+    let x = 10
+    console.log(x.toString() + x.toString())        //  1010
+
+
+    //  묵시적 형변환
+    Number('1')             //  1
+    Number('100')           //  100
+    Number('100a')          //  NaN
+    parseInt('100ab')       //  100
+    parseInt('1a2b3c')      //  1
+    parseInt('A1B2C3')      //  NaN
+
+    // parseInt : 숫자와 문자가 같이 있으면 문자열 앞에까지 있는 숫자 만 출력됨
+    //            만약 숫자가 없고 문자로 시작한다면 NaN 오류 뜸
+
+  </script>
+</body>
+
+</html>

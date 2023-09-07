@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>margin 병합 현상</title>
+  <style>
+    .box1,
+    .box2,
+    .box3 {
+      width: 100px;
+      height: 100px;
+    }
+
+    .box1 {
+      background-color: royalblue;
+      margin: 40px;
+    }
+
+    .box2 {
+      background-color: salmon;
+      margin: 60px;
+    }
+
+    .box3 {
+      background-color: gold;
+    }
+
+    span {
+      background-color: slateblue;
+      margin: 20px;
+
+    }
+
+    .parent {
+      background-color: skyblue;
+      /* border: 1px solid transparent; */
+      padding: 20px;
+      /* overflow: hidden; */
+    }
+
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: slateblue;
+      margin: 20px;
+    }
+
+    .parent {
+      position: relative;
+      /* overflow: scroll; */
+      overflow-y: auto;
+      /* overflow-x: auto;
+      overflow-y: hidden; */
+    }
+
+    .tooltip {
+      width: 400px;
+      height: 500px;
+      position: absolute;
+      top: 70px;
+      left: 70px;
+      background-color: #eee;
+    }
+
+    /* box1에 margin:40px,
+    box2에 margin:20px 을 줬을 때
+    box1과 box2 사이의 margin 차이는 ? 
+    -> 40
+    왜? 둘 중에 더 큰값의 margin값이 적용됨 */
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    box1
+  </div>
+  <div class="box2">
+    box2
+  </div>
+  <div class="box3">
+    box3
+  </div>
+
+  <span>span1</span><span>span2</span><span>span3</span>
+
+  <div class="parent">
+    <div class="child">child</div>
+    <div class="tooltip">
+      툴팁에 대한 컨텐츠툴팁에 대한 컨텐츠툴팁에 대한 컨텐츠툴팁에 대한 컨텐츠툴팁에 대한 컨텐츠
+    </div>
+  </div>
+</body>
+
+</html>

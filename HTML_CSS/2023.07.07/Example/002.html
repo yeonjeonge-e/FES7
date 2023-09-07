@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2. 구체성의 원칙</title>
+  <style>
+    .green {
+      color: green;
+    }
+
+    p {
+      color: red;
+      font-size: 20px;
+    }
+
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="green">선택자 우선순위</p>
+</body>
+
+</html>
+
+
+<!-- 
+  p 태그를 선택했을 때 보다                         p-color
+  정확한 선택자를 선택하였을 때가 더 구체적이라       .green-color
+  우선순위가 높다
+ -->

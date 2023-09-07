@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      box-shadow: inset 0 0 20px red;
+      width: 600px;
+      margin: 100px auto;
+      display: flex;
+    }
+
+    .Sidebar {
+      box-shadow: inset 0 0 20px blue;
+      flex-basis: 100px;
+      padding: 10px;
+      /* width개념에서 자식이 커진다고 부모가 커지지는 않음 - 자식이 부모보다 더 크다면 내용물만 삐져나감 */
+      min-width: auto;
+      /* 컨텐츠 크기 만큼 잡힘 - 텍스트는 글자 사이즈만큼, 이미지는 이미지 크기 만큼 */
+
+      /* basis값만 있을 때는 내용에 따라 가변적으로 늘어나지만 width 값만 있을 때는 width 값에 맞춰지는 건가요??? -- 정답 */
+    }
+
+    .main {
+      box-shadow: inset 0 0 20px orangered;
+      flex-basis: auto;
+      flex-grow: 1;
+      /* main이 가득 참 -- width값 사용 안하고 grow만으로 가능 */
+      /* main에만 여백을 나눠주는 이유는 ? -- 메인에게만 지정을 해줘서 임 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="Sidebar">
+      <img src="./images/frog-3d.png" alt="">
+    </div>
+    <div class="main">main</div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- 
+
+이게 맞을까요?
+min-width: auto;의 문제점은 내부 컨텐츠 크기만큼 최소너비가 정해지기 때문에, 컨텐츠가 레이아웃보다 커지면 레이아웃도 같이 커져서 변형된다. 따라서 flex-basis를 쓸 땐 min-width값을 0으로 주는 등 따로 정해주어서 레이아웃의 변형이 없이 내부 컨텐츠만 레이아웃보다 커지도록 설정을 해준다. 또한, 다른 flex-items의 영향을 받지 않기 위해서 flex-shrink를 0으로 해주어 더이상 작아지지 않도록 해준다.
+
+한줄 요약 !!!
+
+ -->

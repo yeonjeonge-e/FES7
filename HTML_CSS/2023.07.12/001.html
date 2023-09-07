@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    div {
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center;
+      background-color: #eee;
+    }
+
+    p {
+      background-color: salmon;
+      /*       
+      width: 100px;*/
+      height: 100px;
+
+
+      /* flex-shrink: 0; */
+      /* 화면의 크기가 줄어들때 텍스트의 크기가 줄어드는게 싫다면 shrink 사용 */
+
+      flex-basis: 0;
+      /*  - flex-item의 초기 크기 설정
+          - 내부 콘텐츠에 따라 유연한 크기를 가짐 */
+    }
+
+    .item1 {
+      flex-shrink: 0;
+      order: 10;
+      /* 숫자가 클 수록 뒤로 감 */
+    }
+
+    .item2 {
+      flex-shrink: 1;
+      background-color: aquamarine;
+    }
+
+    .item3 {
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  <div>
+    <p>안녕하세요</p>
+    <p>반갑습니다 <br> ❤️ </p>
+    <p>7기 여러분</p>
+  </div>
+-->
+
+  <div>
+    <p class="item1">Lorem ipsum dolor sit amet.</p>
+    <p class="item2">Lorem ipsum dolor sit amet.</p>
+    <p class="item3">Lorem ipsum dolor sit amet.</p>
+  </div>
+</body>
+
+</html>
+
+<!-- 
+  주축이 row 였을 때 widht 값 무시,
+        column 일 경우는 height 값 무시
+ -->

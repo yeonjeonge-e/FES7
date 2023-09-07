@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flexing</title>
+  <style>
+    body {
+      background-color: brown;
+    }
+
+    .playground {
+      border: 10px solid maroon;
+      width: 980px;
+      margin: 0 auto;
+      border-radius: 30px;
+      background-color: skyblue;
+      display: flex;
+    }
+
+    .frog {
+      background-color: mediumseagreen;
+      color: lime;
+      font-size: 40px;
+      margin: 10px;
+      border: 6px solid green;
+      border-radius: 10px;
+      /* flex-basis: 200px; */
+      /* flex-grow: 1; */
+      /* flex-basis: 0;도 포함되어 있고 grow:1이 추가 되면 전체 공간을 각각 똑같이 나눠가짐 */
+
+      /* min-width: auto; */
+      /* frog 텍스트 크기보다 더 작아질 수는 없음 -- 0으로 설정하면 텍스트는 그대로 있지만 frog 공간은 0만큼 줄어듦 */
+
+      /* basis보다 줄어들때는 min-width가 적용됨 !!! */
+
+      width: 100px;
+      /*  만일 flex-basis: 200px; 작성 후 width: 100px 적어주면 flex-basis가 이김 -- 그래서 100px 까지만 늘어남
+          근데 flex-basis: auto;이고 width: 100px 면 flex-basis가 width값 100px를 가져옴
+            => flex-basis가 있으면 min-width 영향도 받는거고 basis가 없고 width가 있으면 width 값만 적용이 되는것임 !!!
+            
+          - flex-basis가 없이 width:100px 만 있으면 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="playground">
+    <div class="frog"><img src="" alt="">frog</div>
+    <div class="frog"><img src="" alt="">frog</div>
+    <div class="frog"><img src="" alt="">frog</div>
+
+  </div>
+
+</body>
+
+</html>

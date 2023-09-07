@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="../reset.css"> -->
+  <style>
+    .canvas {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      background-color: black;
+    }
+
+    .canvas.red {
+      background-color: red;
+    }
+
+    .canvas.yellow {
+      background-color: yellow;
+    }
+
+    .canvas.green {
+      background-color: green;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      width: 500px;
+      margin: 50px auto 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas"></div>
+  <ul>
+    <li><button type="button" class="btn-red">빨강</button></li>
+    <li><button type="button" class="btn-yellow">노랑</button></li>
+    <li><button type="button" class="btn-green">초록</button></li>
+  </ul>
+
+  <script>
+    const canvas = document.querySelector('.canvas'),
+      btns = document.querySelectorAll('[class^=btn]');
+
+    btns.forEach((itemBtn) => {
+      itemBtn.addEventListener('click', () => {
+        canvas.classList.remove('red', 'yellow', 'green');
+        if (itemBtn.classList.contains('btn-red')) {
+          canvas.classList.add('red');
+        } else if (itemBtn.classList.contains('btn-yellow')) {
+          canvas.classList.add('yellow');
+        } else if (itemBtn.classList.contains('btn-green')) {
+          canvas.classList.add('green');
+        }
+        //  그린이 마지막 요소인데 else가 아닌 else if문을 적는 이유?
+        //  - 이후에 작업이 추가되어 다른 색상도 추가할 수 있으므로 !
+      });
+    });
+  </script>
+
+</body>
+
+</html>
+
+<!--
+  add 위에 remove가 들어가는 이유
+  - add 다음에 들어가면 추가한 클래스도 지워버려서
+  - 클릭하면 다 지우고 다시 추가 이런 느낌
+-->

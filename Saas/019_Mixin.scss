@@ -1,0 +1,28 @@
+// ### 1. Mixin이란
+
+// Mixin은 코드를 재사용하기 위해 만들어진 기능입니다. 선택자들 사이에서 반복되고 있는 코드들은 mixin을 사용하여 코드 반복을 줄입니다. 중복되는 코드는 mixin으로 만들어 놓고 원하는 선택자 블럭에 mixin을 include하면 됩니다.
+
+// 2. Mixin 사용하기
+
+// @mixin 이름(매개변수) //생성
+// @include 이름(인수)  //사용
+
+@mixin button($color) {
+  background-color: $color;
+  border-radius: 5px;
+  padding: .25em .5em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color;
+    border-color: $color;
+  }
+}
+
+.button-a {
+  @include button(#b4d455);
+}
+
+.button-b {
+  @include button(#c0ffee);
+}

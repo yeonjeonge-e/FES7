@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    class Robot {
+      constructor(name) {
+        // 프로퍼티
+        this.name = name;
+      }
+
+      // 메서드
+      // sayName(newName) {
+      //   console.log(`나는 ${newName} 입니다`);
+      // }
+      //  robot.sayName("얀둥")   출력하면 나는 얀둥 입니다
+
+      sayName(name) {
+        console.log(`나는 ${name} 입니다`);
+      }
+      //  robot.name = "얀둥"   출력하면 얀둥
+    }
+
+    // 인수가 convenience의 매개변수로 들어간다
+    const robot = new Robot('동주');
+  </script>
+</body>
+
+</html>

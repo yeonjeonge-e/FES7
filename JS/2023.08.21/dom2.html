@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 2</title>
+</head>
+
+<body>
+  <p>hello</p>
+  <input type="text">
+  <button>Write Something!</button>
+
+  <script>
+    // 1. 3가지 모듈 선택
+    const myBtn = document.querySelector("button");
+    const myP = document.querySelector("p");
+    const myInput = document.querySelector("input");
+
+
+    // 2. button에 이벤트리스너 붙이기
+    // myBtn.addEventListener('click', function () {
+    //   myP.textContent = myInput.value;
+    //   //  textContent : 텍스트 노드를 추가하고 싶을 때 사용
+    // });
+
+
+    // 3. input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있음
+    myInput.addEventListener('input', () => {
+      myP.textContent = myInput.value;
+    });
+
+
+    myP.innerHTML = "<strong>I'm Strong!!</strong>";
+    //  문자열 할당됨
+    //  출력 시 - p태그 안에 I'm Strong!! 텍스트가 적힘(포함됨)
+  </script>
+
+
+
+
+
+  <h3>원본 요소:</h3>
+  <p id="source">
+    <style>
+      #source {
+        color: red;
+      }
+    </style>
+    아래에서
+    <br />
+    이 글을
+    <br />
+    어떻게 인식하는지 살펴보세요.
+    <span style="display:none">숨겨진 글</span>
+  </p>
+  <h3>textContent 결과:</h3>
+  <textarea id="textContentOutput" rows="6" cols="30" readonly>...</textarea>
+  <!-- textarea : 글씨를 마음껏 쓸 수 있는 공간,
+        readonly : 읽기 전용  -->
+  <h3>innerText 결과:</h3>
+  <textarea id="innerTextOutput" rows="6" cols="30" readonly>...</textarea>
+
+  <script>
+    const source = document.getElementById("source");
+    const textContentOutput = document.getElementById("textContentOutput");
+    const innerTextOutput = document.getElementById("innerTextOutput");
+
+    textContentOutput.innerHTML = source.textContent;
+    innerTextOutput.innerHTML = source.innerText;
+  </script>
+</body>
+
+</html>

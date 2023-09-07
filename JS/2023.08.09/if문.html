@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if문</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <script>
+
+    // if문
+
+    let x = 3;
+    let y = 7;
+
+    // Ex 1)
+    if (x == y) {
+      //  괄호() 안에는 꼭 true 값이 아니여도 됨
+      document.write('if문으로 실행되었습니다.');
+      //  문서(document)에 적어라(write) ('적을 내용');
+    } else {
+      document.write('else문으로 실행되었습니다.');
+    }
+
+    // x 와 y의 값은 같지 않기 때문에 else 문이 실행됨
+
+
+
+    // Ex 2)
+    if (1 === true) {
+      document.write('if문으로 실행되었습니다.');
+    } else {
+      document.write('else문으로 실행되었습니다.');
+    }
+
+    // xelse 문이 실행됨
+  </script>
+
+
+
+  <script>
+
+    // if else 문
+
+    let score = 69;
+    let money = 1000;
+
+    //  Ex 1)
+    //  - 앞에서 조건이 충족되면 그 뒤에 문장을 실행하지 않음
+    if (score > 90) {
+      document.write('참 잘했습니다!<br>');
+      money += 100000
+    } else if (score > 80) {
+      document.write('잘했습니다!<br>');
+      money += 10000
+    } else if (score > 70) {
+      document.write('했습니다!<br>');
+      money += 1000
+    } else {
+      money = 0
+    }
+
+    document.write(money);
+    // 0 출력
+
+
+
+    //  Ex 2)
+    //  - if문이 각각 되어 있으므로 앞에서 조건이 충족되었다 해도 뒤에 있는 if문을 실행함
+    //  - 동작은 하지만 효율적이지 않음 !!!
+    if (score > 90) {
+      document.write('참 잘했습니다!<br>');
+      money += 100000
+    }
+    if (score > 80) {
+      document.write('잘했습니다!<br>');
+      money += 10000
+    }
+    if (score > 70) {
+      document.write('했습니다!<br>');
+      money += 1000
+    }
+    else {
+      money = 0
+    }
+
+    document.write(money);
+    // 0 출력
+  </script>
+
+
+
+  <script>
+    //  Ex 3) 문제풀이
+    //  사용자로부터 입력받은 나이에 따라 다른 인사말을 콘솔로 출력하는 프로그램을 작성하세요.
+    //   나이가 18세 이상이면 "안녕하세요!"를 출력하고,
+    //   10세 이상이면 "안녕! 반가워 꼬마친구! ” 를 출력하며,
+    //   10세 미만이면 “부럽다…” 를 출력합니다.
+
+    let age = prompt("나이를 입력해주세요");
+    //  prompt 값이 있으면 변수에 저장을 해줘야함
+
+    if (age >= 18) {
+      document.write("안녕하세요!");
+    } else if (age >= 10) {
+      document.write("안녕! 반가워 꼬마친구");
+    } else {
+      document.write("부럽다…");
+    }
+
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- 
+prompt("숫자를 하나 입력해주세요");
+- prompt : console 창에서 사용자가 원하는 값을 입력받음
+
+document.write("");
+- condole 창에 출력됨
+-->
+
+
+
+<!-- 
+  ReferencesError
+  - 접근하고자 하는 데이터가 제대로 선언되어 있는지, 오타는 없는지, 전역공간에 존재하지 않는 경우에 발생하는 오류
+-->
+
+
+<!-- 
+  전역공간
+  함수공간
+  중괄호안에있는공간
+
+  위 3개로 나눌 수 있음
+
+  전역공간(어디서든 접근할 수 있는 공간) > 콘솔창에서 바로바로 접근이 가능
+  지역공간(function 내부, {} 내부에서만 존재함)
+-->

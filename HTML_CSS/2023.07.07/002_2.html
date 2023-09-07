@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    div #id {
+      color: green;
+    }
+
+    p {
+      color: black;
+    }
+
+    #id {
+      color: blue;
+    }
+
+    * {
+      color: rosybrown !important;
+      /* 그 어떤 우선순위보다 !important 가 제일 높아서 이 속성만 나타남 
+        !important 도 여러 개 사용된다면 ?
+          후자 우선순위에 따라서 후자에 적힌 스타일이 적용됨 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p id="id" class="class">
+      1. 이 글자는 어떤 색일까요 ?
+    </p>
+    <p id="id" class="class" style="color:red">
+      1. 이 글자는 어떤 색일까요 ?
+    </p>
+  </div>
+
+  <!-- 
+  <정답>
+  1. green
+  2. red
+` -->
+</body>
+
+</html>

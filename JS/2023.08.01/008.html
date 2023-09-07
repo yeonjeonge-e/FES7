@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript type</title>
+</head>
+
+<body>
+  <script>
+    let x = 10;
+    let y = 20;
+    let z = 'a'; // 97
+    let k = 'b'; // 98
+    console.log(x + y); // 30
+    console.log(z); // a
+    console.log(z + k); // ab, 왜 195가 아니라 ab가 나올까? - 문자열이라 문자열의 합이 나옴
+
+    // typeof가 정확하게 나오긴 하지만 우리가 원하는 값이 아닐 수도 있습니다.
+    console.log(typeof (x))             //  number    97
+    console.log(typeof (z))             //  string    a
+    console.log(typeof ([1, 2, 3]))     //  object    원래는 배열 array로 출력되야 함
+
+
+
+    function typeCheck(value) {
+      const return_value = Object.prototype.toString.call(value);
+      const type = return_value.substring(
+        return_value.indexOf(" ") + 1,
+        return_value.indexOf("]")
+      );
+      return type.toLowerCase();
+    }
+
+    //  typeOf보다 typeCheck가 더 정확하게 출력됨
+    //  Function.prototype.call 메소드 사용 시 모든 타입의 값을 알아낼 수 있음 !!!
+
+    console.log(typeCheck(x))             //  number
+    console.log(typeCheck(z))             //  string
+    console.log(typeCheck([1, 2, 3]))     //  array
+
+
+    console.log("--------------- typeof ---------------");
+    //  피연산자의 데이터 타입을 문자열로 반환
+    //  null을 제외한 원시 타입 체크시에는 문제 없음
+
+
+    // 원시타입
+    // 숫자, 문자, 불리언, null, undefined, symbol
+    // 참조타입
+    // 객체, 배열, 함수, 정규표현식
+
+    console.log(typeof (x))             //  number
+    console.log(typeof (z))             //  string
+    console.log(typeof ([1, 2, 3]))     //  object
+
+    //  자바스크립트가 어려운 이유
+    console.log(typeof (null))          //  javascript의 버그   object로 나옴
+
+    console.log(typeof ([]))            //  object
+    console.log(typeof ({}))            //  object
+    console.log(typeof (function () { }))     //  function
+
+    console.log(typeof (/a/g))          //  object      정규표현식
+    console.log(typeof (true))          //  boolean     true / false
+    console.log(typeof (NaN))           //  number
+    console.log(typeof (undefined))     //  undefined
+
+
+    console.log("--------------- typeCheck ---------------");
+
+
+    console.log(typeCheck(x))                   //  number
+    console.log(typeCheck(z))                   //  string
+    console.log(typeCheck([1, 2, 3]))           //  array
+
+    console.log(typeCheck(null))                //  null
+
+    console.log(typeCheck([]))                  //  array
+    console.log(typeCheck({}))                  //  object
+    console.log(typeCheck(function () { }))     //  function
+
+    console.log(typeCheck(/a/g))                //  regexp      정규표현식
+    console.log(typeCheck(true))                //  boolean     true / false
+    console.log(typeCheck(NaN))                 //  number
+    console.log(typeCheck(undefined))           //  undefined
+  </script>
+</body>
+
+</html>

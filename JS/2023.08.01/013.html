@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String</title>
+</head>
+
+<body>
+  <script>
+    let str = "Hello world!";
+
+    //  slice(시작 인덱스, 종료 인덱스)
+    //  종료 인덱스 바로 직전(-1)까지 잘라냅니다
+    console.log(str.slice(0, 5));     //  Hello         실무에서 많이 사용 !
+    console.log(str.slice(0, 7));     //  Hello w
+    console.log(str.slice(7, 3));     //  작동은 하지만 빈 문자열 출력
+    console.log(str.slice(2));        //  llo world!    실무에서 많이 사용 !
+    // console.log(str.slice(, 5));      //  오류 발생   error
+    console.log(str.slice(-6, -1));   //  world
+    console.log(str.slice(-6, 0));    //  작동은 하지만 빈 문자열 출력
+    console.log(str.slice(-6));       //  world!
+
+
+
+    //  substring(시작 인덱스, 종료 인덱스)
+    //  시작 인덱스부터 종료 인덱스 바로 직전(-1)까지 잘라낸다
+    console.log(str.substring(0, 5));     //  Hello
+    console.log(str.substring(0, 7));     //  Hello w
+    console.log(str.substring(7, 3));     //  lo w
+    console.log(str.substring(2));        //  llo world!
+    // console.log(str.substring(, 5));      //  오류 발생   error
+    console.log(str.substring(-6, -1));   //  작동은 하지만 빈 문자열 출력
+    console.log(str.substring(-6, 0));    //  작동은 하지만 빈 문자열 출력
+    console.log(str.substring(-6));       //  Hello world!
+
+
+
+    //  slice와 substring 차이점
+    //  1.  음수 취급
+    //      slice는 음수를 취급하지만 substring은 양수로 취급함
+    let test = 'hello world'
+    console.log(test.slice(-5, 9));       //  wor
+    console.log(test.slice(6, 9));        //  wor
+    console.log(test.substring(-5, 9));   //  hello wor
+    console.log(test.substring(-1, 9));   //  hello wor
+    //  2.  시작인덱스가 종료인덱스보다 클 경우: substring의 경우 두 값을 바꿔 실행합니다.
+    console.log(test.slice(7, 3));        //  작동은 하지만 빈 문자열 출력
+    console.log(test.substring(7, 3));    //  lo w
+    console.log(test.substring(3, 7));    //  lo w
+
+
+
+
+
+    //  ----------------------------------------------------------------
+
+
+
+
+
+    // 문제 : indexOf, search, slice, substring 4개를 사용하여 출력 문자열을 출력해주세요
+    // (indexOf, search 2개 중 하나 사용 필수이며, slice, substring 2개 중 하나 사용 필수)
+    let str2 = "paullab CEO leehojun CTO kimdohyeon";
+
+    // 출력 문자열
+    // 1. CEO leehojun
+    // 2. CTO kimdohyeon
+
+    // 아래 출력 문장들은 이지현님 스레드 답장 복사해옴
+    // let str2 = "paullab CEO leehojun CTO kimdohyeon";
+    const searchIndex1 = str2.search(/CEO/g);
+    const searchIndex2 = str2.indexOf("CTO");
+    const CTOstr = str2.substring(searchIndex1, searchIndex2 - 1);
+    const CEOstr = str2.slice(searchIndex2 - str2.length);
+
+
+    //  --- 위의 문제를 아래로 각색함
+
+    // 문제 : 홍길동이 반역을 일으켜 이호준이 회사에 CEO 자리에서 물러나도 CTO가 되었다.
+    //        아래 문구를 출력 문자열로 변경해라
+    //        indexOf, search, slice, substring 4개를 사용하여 출력 문자열을 출력해주세요
+    //        (indexOf, search 2개 중 하나 사용 필수이며, slice, substring 2개 중 하나 사용 필수)
+    let 문제예문 = "paullab CEO 이호준 CTO 홍길동";
+
+    // 출력 문자열
+    // 1. CEO 홍길동
+    // 2. CTO 이호준
+    let CEO의위치 = 문제예문.indexOf("CEO")
+    let CTO의위치 = 문제예문.indexOf("CTO")
+
+    let CEO = 문제예문.slice(CEO의위치 + 4, CTO의위치 - 1);
+    let CTO = 문제예문.slice(CTO의위치 + 4);
+
+    console.log(`1. CEO ${CTO}`)
+    console.log(`2. CTO ${CEO}`)
+
+
+
+
+
+    //  ----------------------------------------------------------------
+
+
+
+
+
+    // 아래에 있는 코드는 사용 지양하기 - 없어질 코드임
+
+
+    // substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환합니다.
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+    // 명세에서 사라질 수도 있음
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring#the_difference_between_substring_and_substr
+    //substr 대신 substring 이나 slice를 사용 권장
+    console.log(txt2.substr(8, 3));
+    console.log(txt2.substr(txt2.indexOf("C"), 3));
+  </script>
+</body>
+
+</html>

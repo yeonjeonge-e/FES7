@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this2</title>
+</head>
+
+<body>
+  <script>
+    / * this */
+
+    function sayName() {
+      console.log(this.name);
+    }
+
+    var name = 'Hero';
+    // 전역으로 선언한 name 변수의 앞에는 window 가 생략되어 있습니다. 
+    // 때문에 window.name === "Hero" 가 성립합니다.
+    let peter = {
+      name: 'Peter Parker',
+      sayName: sayName
+      //  함수 뒤에 소괄호가 있으면 실행한다는 의미
+      //  실행과 선언은 다르 것
+      //  sayName: sayName 했을 때 오른쪽 sayName은 위의 sayName 함수를 가져온 건가여?  -- 정답
+      //  왼쪽 sayName 부분은 다른 이름으로 해도 상관없이 sayName을 호출할 수 있는거져?   --  그냥 부르는 이름임 상관없음
+    }
+    // sayName : 함수가 피터파크 함수 내의 객체에 존재함
+
+    let bruce = {
+      name: 'Bruce Wayne',
+      sayName: sayName
+    }
+
+    sayName();
+    peter.sayName();        //  peter객체에 sayName 함수를 실행시키는 것
+    bruce.sayName();
+
+    /* sayName() 함수를 실행했을 때와
+    peter, bruce 객체의 sayName 함수를 호출했을 때의 결과를 비교해 보세요 */
+  </script>
+
+
+
+  <!--
+  this 특징
+  - 함수가 만들어질 때가 아닌 '실행'될 때 값이 결정 됨 
+  - peter의 sayName도 결국 sayName의 함수를 뜻하는거기때문에 그냥 sayName함수의 this로 가는 것
+  -->
+  <script>
+    function sayName() {
+      console.log(this.name);
+    }
+    var name = 'Hero';
+
+    let peter = {
+      name: 'Peter Parker',
+      sayName: sayName
+    };
+
+    let bruce = {
+      name: 'Bruce Wayne',
+      sayName: peter.sayName
+    };
+
+    bruce.sayName();
+
+    // 결과 값 : Bruce Wayne
+
+
+
+    var peter = {
+      name: 'Peter Parker',
+      sayName: function () {
+        console.log(this.name);
+      }
+    }
+
+    var bruce = {
+      name: 'Bruce Wayne',
+    }
+    peter.sayName.call(bruce);
+
+// 결과 값 : Bruce Wayne
+  </script>
+
+
+
+
+
+  <script>
+
+    /* this 사용 예시 */
+
+    // let 호텔 = [{
+    //     '이름': '하나호텔',
+    //     '위치': '제주도 제주시 001',
+    //     '가격': { 'A': 50000, 'B': 30000, 'C': 15000 },
+    //     '방의개수': 50,
+    //     '예약자수': 25,
+    //     '남은방의개수': function () { return this.방의개수 - this.예약자수 }
+    // }, {
+    //     '이름': '둘호텔',
+    //     '위치': '제주도 제주시 002',
+    //     '가격': { 'A': 100000, 'B': 60000, 'C': 30000 },
+    //     '방의개수': 100,
+    //     '예약자수': 30,
+    //     '남은방의개수': function () { return this.방의개수 - this.예약자수 }
+    // }, {
+    //     '이름': '셋호텔',
+    //     '위치': '제주도 제주시 003',
+    //     '가격': { 'A': 80000, 'B': 50000, 'C': 30000 },
+    //     '방의개수': 120,
+    //     '예약자수': 80,
+    //     '남은방의개수': function () { return this.방의개수 - this.예약자수 }
+    // }];
+    // console.log(호텔[0].남은방의개수());
+    // console.log(호텔[1].남은방의개수());
+    // console.log(호텔[2].남은방의개수());
+
+
+
+    // / * this */
+    function sayName() {
+      console.log(this.name);
+    }
+
+    // var name = 'Hero';
+    // let name2 = "hero";
+    // const name3 = "hero";
+    // 전역으로 선언한 name 변수의 앞에는 window 가 생략되어 있습니다. 
+    // 때문에 window.name === "Hero" 가 성립합니다.
+    let peter = {
+      name: 'Peter Parker',
+      sayName: sayName
+    }
+
+    let bruce = {
+      name: 'Bruce Wayne',
+      sayName: function () {
+        console.log(this.name);
+      }
+    }
+
+    // sayName();
+    peter.sayName();
+    bruce.sayName();
+
+    /* sayName() 함수를 실행했을 때와
+    peter, bruce 객체의 sayName 함수를 호출했을 때의 결과를 비교해 보세요 */
+  </script>
+</body>
+
+</html>

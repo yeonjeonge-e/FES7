@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class3 상속</title>
+</head>
+
+<body>
+  <script>
+    class Robot {
+      constructor(name) {
+        this.myName = name;
+      }
+
+      sayYouName() {
+        console.log(`제 이름은 ${this.myName} 입니다 삐리비리리비리`);
+      }
+    }
+
+    // extends 선언하고 constructor를 작성하지 않아도
+    // 기본적으로 super() 메서드가 기본 장착됨
+    // 생성자 자체가 super() 메서드가 장착됨
+
+    class BabyRobot extends Robot {
+      constructor(name) {
+        super(name);
+        //  부모에 접근하기 위해 사용
+        //  자식의 constructor가 생략되면 부모의 constructor를 받아와야 함
+
+        //  constructor(...args){
+        //  아무것도 없으면 이게 생략되어 있음 부모의 constructor를 받아와야 한다.
+        //     super(...args);
+        // }
+
+        this.age = 10;
+        // this - 프로퍼티
+        // super - 상속
+      }
+    }
+
+    const babyRobot = new BabyRobot('소을');
+  </script>
+
+
+
+
+  <!-- 아래처럼 코드를 짜도 실행은 됨 
+  <script>
+    class Robot {
+      constructor(name,) {
+        this.myName = name;
+        this.myage = age;
+      }
+
+      sayYouName() {
+        console.log(`제 이름은 ${this.myName} ${this.myage} 입니다 삐리비리리비리`);
+      }
+    }
+
+
+    class BabyRobot extends Robot {
+      // constructor(name) {
+      //   super(name);
+      //   this.age = 10;
+      // }
+    }
+
+    const babyRobot = new BabyRobot("소을", 20);
+  </script>-->
+</body>
+
+</html>

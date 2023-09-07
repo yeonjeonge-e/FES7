@@ -1,0 +1,292 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #f2f2f2;
+  font-family: "SpoqaHanSansNeo";
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-login {
+  background-color: #2f80ed;
+  color: #fff;
+}
+
+#login {
+  background: #E5E5E5;
+  position: fixed;
+  width: 100%;
+}
+
+#login::after {
+  display: block;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+#login .login_form {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+  color: #767676;
+  z-index: 20;
+}
+
+#login .login_title {
+  padding: 20px;
+  border-bottom: 1px solid #c4c4c4;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+#login .close {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 23px;
+  right: 24px;
+  cursor: pointer;
+}
+
+#login .login_contents {
+  text-align: left;
+}
+
+#login .login_quote {
+  display: block;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+}
+
+#login #login_execute {
+  padding: 25px;
+}
+
+#login .login_input {
+  padding-left: 16px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+#login .login_input::placeholder {
+  font-size: 16px;
+}
+
+#login .login_input:focus {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#login .error {
+  position: relative;
+  top: -8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: red;
+}
+
+#login .is_show {
+  display: block;
+}
+
+#login .is_error {
+  border: 2px solid red;
+}
+
+#login .login_radio-keep-id {
+  position: relative;
+  display: block;
+  font-weight: 500;
+}
+
+#login .login_radio-keep-id::before {
+  display: inline-block;
+  content: "";
+  vertical-align: bottom;
+  margin: 5px 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #767676;
+  border-radius: 50%;
+}
+
+#login .login_radio-keep-id::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  width: 5.5px;
+  height: 8.5px;
+  border-bottom: 1px solid #767676;
+  border-right: 1px solid #767676;
+  transform: rotate(45deg);
+}
+
+#login #login_checkbox:checked+.login_radio-keep-id::before {
+  border: 1px solid #2f80ed;
+  background-color: #2f80ed;
+}
+
+#login #login_checkbox:focus+.login_radio-keep-id::before {
+  box-shadow: 0 0 0 2px transparent;
+}
+
+#login #login_checkbox:checked+.login_radio-keep-id::after {
+  border-color: #fff;
+}
+
+#login .login_btn-login {
+  height: 50px;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+#login .login_info {
+  font-size: 14px;
+}
+
+#login .login_info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#login .login_info a:not(:last-child)::after {
+  content: "|";
+  margin: 0 12px;
+  color: #767676;
+  font-size: 14px;
+}
+
+/* sns_login */
+
+.sns_login {
+  margin-top: 30px;
+  border-top: 1px solid #c4c4c4;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.sns_login .sns_login-legend {
+  margin-bottom: 20px;
+  padding: 0 13px;
+  font-size: 14px;
+}
+
+.sns_login .sns_login_btn {
+  padding-left: 25px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.sns_login .sns_login_btn:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.sns_login .sns_login_btn::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 11px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/css_sprites.png");
+  background-size: 96px 96px;
+}
+
+.accounts {
+  text-decoration: none;
+  color: #767676;
+}
+
+.sns_login #google {
+  border: 1px solid #767676;
+}
+
+.sns_login #google::after {
+  background-position: -58px -58px;
+}
+
+.sns_login #facebook {
+  border: 1px solid #2d9cdb;
+}
+
+.sns_login #facebook::after {
+  background-position: -10px -58px;
+}
+
+.sns_login #naver {
+  border: 1px solid #00bf18;
+}
+
+.sns_login #naver::after {
+  background-position: -58px -10px;
+}
+
+.sns_login #kakaotalk {
+  border: 1px solid #f2c94c;
+}
+
+.sns_login #kakaotalk::after {
+  background-position: -10px -10px;
+}

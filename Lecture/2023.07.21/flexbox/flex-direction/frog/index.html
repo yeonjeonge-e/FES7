@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flexing</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: brown;
+            box-shadow: inset 0 0 100px blue;
+        }
+
+        .playground {
+            border: 10px solid maroon;
+            width: 980px;
+            margin: auto auto;
+            border-radius: 20px;
+            background-color: skyblue;
+            display: flex;
+            /* 자식 요소들이 인라인 앨리먼트가 됨 - 텍스트의 크기 만큼 잡힘 */
+            /* flex-shrink: 1; */
+            /*  1은 수축의 비율
+                -   일반적인 상황(공간이 여유있는)에서는 동작하지 않음
+                -   여유 공간이 없을 시 최소 1만큼의 공간 이하는 줄어들 수 없음 */
+            /* flex-wrap: wrap; */
+            /* 공간이 부족하면 다음 줄로 넘어감 */
+
+            /* flex-basis: 200px; 지정해줬지만 공간이 부족하면 같은 크기로 줄어들음 -- 그래야 넘쳐흐르지 않음 */
+
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+
+        .frog {
+            background-color: mediumseagreen;
+            color: lime;
+            font-size: 40px;
+            margin: 10px;
+            border: 6px solid green;
+            border-radius: 10px;
+            /* flex-basis: 200px; */
+            /*flex-shrink: 1;
+            min-width: 0; */
+            /* 초기값 auto  == 자식요소의 크기로 결정 됨 */
+            /* 0으로 지정해주면 이미지만 삐져나옴 -- 공간은 박스안에 다 들어가있음 */
+
+            flex-basis: 200px;
+            /* 텍스트의 크기 만큼 너비 지정 */
+
+            /* flex-grow: 1; */
+            /* 모든 비율이 1로 맞춰짐 - 공간을 남기지 않고 꽉 차게 사용함 */
+
+            /* width: 200px;
+            margin-left: auto;
+            margin-right: auto; */
+        }
+
+        /* .frog.covid {
+            margin: 10px auto;
+
+            background-color: orangered;} */
+        /* margin-left: auto; */
+        /* 위 코드가 없으면 frog frog frog 공백으로 나오는데
+                left에 margin auto를 주면 원래 오른쪽에 있던 공백이 왼쪽으로 이동함 */
+
+
+        .frog.fisrt {
+            margin-top: auto;
+            background-color: orangered;
+        }
+
+
+        /* .frog.sun {
+            flex-shrink: 0;
+        } */
+
+        /* .frog.cry {
+            flex-shrink: 200;
+        } */
+        /* 
+                flex-basis: 200px; 값을 지정해줘도 flex-shrink 초기값이 1이라 크기가 늘어나면 박스 위로 넘쳐흐름
+            */
+    </style>
+</head>
+
+<body>
+
+    <div class="playground">
+        <div class="frog cry"><img src="./images/frog-cry.png" alt=""></div>
+        <div class="frog"><img src="./images/frog.png" alt=""></div>
+        <div class="frog"><img src="./images/frog.png" alt=""></div>
+        <!-- <div class="frog"><img src="./images/frog.png" alt=""></div>
+        <div class="frog"><img src="./images/frog-dj.png" alt=""></div>
+        <div class="frog"><img src="./images/frog-dj.png" alt=""></div>
+        <div class="frog sun"><img src="./images/frog-disco.png" alt=""></div> -->
+    </div>
+
+    <!--     
+    <div class="playground">
+        <div class="frog">frog</div>
+        <div class="frog">frog</div>
+        <div class="frog">frog</div>
+    </div>
+    -->
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+
+    function reverse(text) {
+
+      if (text.length <= 1) {
+        return text;
+      }
+      return reverse(text.slice(1)) + text[0]
+
+      //  질문) reverse(text.slice(1)) + text[0] 이 부분에서
+      //        text[0] 값은 앞의 슬라이스 배열에 관한 값인 건가요?
+
+      //       -> text 전달받은 인자의 첫번째 인덱스
+
+      //        text.slice(1) 1번째 이후의 인덱스부터 계속 리턴-실행 반복
+
+
+      //    slice() 메서드의 역할
+      //    - 
+    }
+
+
+
+    function reverse(text) {
+
+      if (text.length <= 1) {
+        return text
+      }
+      return reverse(text.slice(1)) + text[0]
+    }
+
+    // reverse('hello') == reverse('ello') + 'h' == 'olle' + 'h'
+    // reverse('ello') == reverse('llo') + 'e' == 'oll' + 'e'
+    // reverse('llo') == reverse('lo') + 'l' == 'ol' + 'l'
+    // reverse('lo') == reverse('o') + 'l' == 'o' + 'l'
+    // reverse('o') == 'o'
+
+
+    
+  </script>
+</body>
+
+</html>
+
+
+
+<!--
+  hello[0] = h
+  hello 문자열의 첫번째 글자니까 h 나옴
+
+  
+-->

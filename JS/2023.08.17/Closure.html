@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure</title>
+</head>
+
+<body>
+  <script>
+    //  Closure
+    //  폐쇠된 공간 안에 데이터에 접근하기 위한 테크닉
+
+    const outer = function () {
+      let a = 1;
+      const inner = function () {
+        let b = 5;
+        let c = 6;
+        a = a + b + c;
+
+        console.log(a);
+        //  inner함수 안에 a값이 없어서 외부에서 찾음
+      }
+
+      inner();
+    }
+
+    outer();
+
+
+
+
+    //  위 코드 변형함
+    const outer = function () {
+      let a = 1;
+      //  이 공간 == let a = 1; 적혀 있는 공간
+      //  이 공간은 inner() 함수만 접근 가능해서 패쇄적임 --- closure 함수라고 함
+
+      const inner = function () {
+        let b = 5;
+        let c = 6;
+        a = a + b + c;
+
+        console.log(a);
+        //  inner함수 안에 a값이 없어서 외부에서 찾음
+      }
+
+      return inner;
+    }
+    //  inner 함수를 return 값으로 반환함 - 값이 사라지지 않음
+
+    const newInner = outer();
+
+    newInner();
+
+    // outer() 함수는 return을 만나는 순간 사라짐
+    //  newInner 호출 전 a 선언 ?
+
+
+
+
+
+    const person = function () {
+      let age = 15;
+      //  age에 대한 접근 권한은 아래 return에만 가능
+
+      return {
+        name: 'disend',
+
+        getAge: function () {
+          return age;
+          // let age = 15; 라는 값을 리턴하는 것
+        },
+
+        setAge: function (val) {
+          age = val;
+        }
+      }
+    }
+
+
+
+
+
+    const person = function () {
+      let age = 15;
+
+      return {
+        name: 'jaehyun',
+
+        getAge() {
+          return age;
+        },
+
+        setAge(val) {
+          age = val
+        }
+      }
+    }
+
+    const man = person();
+
+
+
+
+
+    const outer = function () {
+      let a = 1;
+
+      const inner = function () {
+        let b = 5;
+        let c = 6;
+        a = a + b + c;
+
+        console.log(a);
+      }
+
+      return inner;
+    }
+
+    const newInner = outer();
+
+    newInner();
+  </script>
+
+
+
+  <script>
+    //  이지현님 코드
+    const Info = function (name) {
+      let Address = "한국";
+      return {
+        name: name,
+        getAddress() {
+          return Address;
+        },
+        setAddress(string) {
+          Address = string;
+        },
+      };
+    };
+
+    const myInfo = Info("지현");
+    myInfo.setAddress("부평");
+
+    console.log(myInfo);
+
+
+
+    // 기본값을 한국으로 하고 주소를 새로 설정하는 코드로 바꿔봤어요! 이제 주소는 비공개여서 console에선 나오지 않도록 했습니다!ㅎㅎ
+  </script>
+
+
+
+
+
+  <script>
+    const x = 100;
+
+    function a() {
+      const x = 1;
+      b();
+    }
+
+    function b() {
+      console.log(x);
+      //  x는 전역에 있는 x를 가리킴
+      //  왜 const x=1이 아닌 const x = 100을 가리킬까?
+      //  함수 스코프 내부에 있기 때문 !
+    }
+
+    a(); // 100
+    b(); // 100
+
+
+    //  클로저는 함수 안에 함수가 선언되어 있고 어떻게든 return을 통해 밖으로 빼내는 것
+    //  호출은 의미 없음
+
+    //  b가 실행되면 console.log(x); 를 찾아야 하는데 x가 function b() 안에 없으므로 찾으러 가야 함
+    //  그래서 전역변수인 const x = 100;의 값을 불러옴
+
+
+    //  ------------------------------
+
+
+    // 비교대상
+
+    const xx = 100;
+
+    function a() {
+      const xx = 1;
+      function b() {
+        console.log(xx);
+      }
+      b();
+    }
+
+    a();
+
+    // a()값은 1
+    // 클로저 처럼 보이지만 클로저 아님 !
+
+
+  </script>
+</body>
+
+</html>
+
+
+
+<!--
+  서동주님 메모
+
+  person이 return되면 person이라는 함수는 사라진다
+  하지만 age는 어딘가 메모리에 남아잇다
+  이유는 내부 메서드에서 age를 참조하고 있기 때문이다
+  age에 대한 접근 권한은 return 객체에만 있다
+  getAge를 통해서만 접근하고
+  setAge를 통해서만 수정 가능하다
+  안전함
+-->

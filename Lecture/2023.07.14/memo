@@ -1,0 +1,307 @@
+CSS 특강 
+
+1st
+
+내용을 이해하도록 노력하자아><
+
+레이아웃에 focus 맞추기
+
+몇개의 덩어리로 이루어져 있을까?
+크게 1개,,,,?
+
+전체는 body
+하나의 덩어리
+
+내부의 컨텐츠 말고 큰 틀부터 만든다
+
+큰덩어리부터 작은 덩어리 순으로 만든다.
+
+한 덩어리 
+덩어리 === <div>
+
+div 가운데 정렬 하기
+
+언제 css 시작해야할까?
+html 다 짜고 css 하는 게 아니라 html 하면서 css 하는 것
+
+재료를 다 사서 테이블 위에 올려놓으면? 감당할게 너무 많다,,,
+다 치우고 최소한의 재료만 올려놓고 손질하고, 공간 확보하고, 손질하고를 반복해야한다.
+
+최소한의 마크업을 하고 css 바로 들어간다.
+
+css에서 div{} : selector(선택자)
+선택자보다는 selector 로 알아두자 (영어 원문으로)
+
+seletor의 종류 중에서 div는 무엇? type selector(유형 선택자)
+
+공간이 차지하는 영역을 보기 위해 background-color: orange 로 설정됨
+
+div가 얼마만큼 차지하고 있을까? 부모만큼
+div의 부모가 body임 => 언제나 Body는 아니니까 부모만큼 이라고 하자~
+
+user agent stylesheet
+div => block level elements
+
+div의 영역: (직계)부모가 제공해주는 컨텐츠 영역의 크기 == 컨테이닝 블럭
+컨테이닝 블럭만큼 div가 가득 찬다.
+
+￼
+margin을 제외한 contents 부분(div가 차지하는 공간)을 자식에게 준다. 
+
+width가 지정되지 않았을 때, auto 값이 들어감 
+width: auto;
+
+width의 initial value ? auto
+background-color의 initial value ? transparent
+
+width는 property(속성)이다.
+
+=> property(속성): value(값)
+
+background-color의 initial value: transparent(투명)
+지정하지 않았을 때, transparent
+
+auto의 문제점: 상황에 따라 다르다
+
+=> 모든 속성들이 초기값이 다 정해져있는 것
+
+2nd
+
+모든 프로퍼티는 initial value 가 정해져있음
+
+margin: 8px; 크롬 브라우저가 body한테 해주는 것
+
+width: auto; 
+width: 100%;
+무슨 차이가 있을까? 
+완전히 똑같지 않음.
+
+width의 percentage: 컨테이닝 블록 너비의 백분율
+컨테이닝 블록: 부모가 지정해주는 컨텐츠 영역의 크기
+
+width: 100%; // margin, padding, border 고려하지 않음
+margin-left: 영역이 밀린다.
+컨테이닝 블록에 맞춰서 계산해주는 것
+
+width: auto;
+margin, padding, border 자동으로 고려해서 계산해줄께
+
+지금 하는 것: 마무리하고 끝내는 개념이 아님! 기초 체력같은 것, 끝이 없어욧!
+mdn 검색하자아
+
+property를 배우면 initial value를 검색해보자
+
+기본 setting
+(쟝소: 며새ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ)
+width: auto; // css 만든 사람이 정해놓은 것
+auto
+auto의 계산 원리 === 컨테이닝 블록의 너비만큼 자동계산해서 가득 채워준다
+Padding을 늘려도 그대로임. padding을 감안해준다.
+
+initial value
+height: auto; // contents의 높이 
+
+auto 만나면 auto가 어떻게 계산되는지 알아야함
+실질적으로 어떤 기준으로 동작되는지 아는것이 중요함
+
+100vw : 뷰포트 기준 === 전체 창
+100%  : 컨테이닝 블록 기준===부모 기준
+auto: 직계부모의 너비 
+
+
+display의 initial value: inline; // property에 정해져 있음.
+
+display 초기값은 inline이다.
+하지만 div같은 경우에는 그룹핑이 목적이기 때문에 브라우저(크롬)가 판단해서 block으로 처리한다.
+
+div2개 실행하고 옆에 자리가 남았는데 왜 밑에 붙을까?
+block: 한줄을 다 차지하게끔 설정됨.
+
+display: block; // 땅 한줄 다 빌림
+width: 400px 만큼만 쓴것 // 400px에 집을 지음
+나머지: 마당, 남은 공간 => 땅 한줄 다 빌린 div 것 === 남은 곳을 여백으로 취하겠다
+
+margin-left: auto; 내가 가지고 있는 영역을 여백으로 자동화한다
+
+브라우저가 자동으로 계산해주는 것 : auto
+어떤 기준에서 어떻게 계산을 해주냐~~~, 어떻게 동작을 하냐
+
+width: auto; height: auto; margin: auto; 다 다르다!
+
+3rd 
+
+
+정하지 말고 그냥 두자 알아서 커진다, 알아서 조절된다 그게 행복이다~~
+height: auto;
+
+div안에 컨텐츠 추가하기~
+
+몇개의 덩어리로 이루어져 있을까? 
+보편적인 관례) header - contents - footer
+￼
+
+layout 나누기
+
+각각 div가 차지하는 공간을 알아야함. => 시각적인 힌트를 준다
+background-color 주던지 border을 주던지
+
+체계적으로 일한다 => 작업 순서!!!
+내부 컨텐츠 위주로 작업하지 말고 큰 틀을 보자!!
+layout이 안정적으로 잡힌 상태에서 그것을 채우는 것으로 하자!
+
+type selector은 구체적이지 않다. 너무 광범위 하다.
+class 주자
+
+div.header {} // 디브 가문의 헤더
+
+*universal selector
+
+*.소희 {} // 모든 성씨의 소희님
+
+클래스 여러개 설정 가능
+
+    <정 class="현지 type_1"></정>
+    <정 class="현지 type_2"></정>
+
+정.현지.type_1
+정.현지.type_2
+
+내가 원하는 바를 구체적으로 선택을 해서 꾸미기 위해 클래스를 사용한다
+
+전체 가운데를 감싸는 것: wrapper
+
+
+이제 내용물 넣자!
+
+header부터 차례로 함 넣어보자
+header을 또 나눠! 3개로 ~
+
+내용 넣고 
+css 초기화
+
+기본제공되는 것을 버려야 내가 원하는 대로 꾸미기 가능
+현재, h1, p에 margin이 있다.
+기본 브라우저가 지정해놓은 것을 없애고 시작하자!
+
+4th
+
+기본 스타일 초기화
+
+브라우저가 제공하는 스타일을 제거한다. 
+user agent stylesheet를 reset 한다.
+
+최상단에 초기화 
+
+header 내용 정렬
+
+상하단 패딩을 준다
+
+가운데 정렬
+
+img 인라인 요소, 가로로 배치됨
+display: inline; // 딱 그만큼만 차지함
+오른쪽 여백 공간은 다음 이미지 것 => margin: 0 auto; 불가능
+
+margin: 0 auto;를 적용하기 위해서는 display: block 요소로 바꾸자
+
+블록요소일 때 마진 며새가 가능하다! 이미지는 width를 원래 가지고 있어서 블록요소로만 바꿔도 적용된다
+
+
+inline-block: inline 세상에서의 block
+
+h1 {
+  background-color: orange;
+  text-align: center;
+}
+h1은 text-align에 의해 중앙에 온것이 아니다! text만 중간에 갔다!
+배경색을 넣어서 차지하는 영역을 보자.
+h1은 움직인 적이 없다. 내가 착각한 것
+text만 중간으로 갔다. 
+
+h1은 display: block, width 값도 지정되어 있지 않아서 auto
+header의 크기만큼 가득차게 되어있음. = 컨테이닝 블록
+컨테이닝 블록만큼 가득차있다.
+
+배경색 넣는 것 중요하다.!!!!!!
+차지하는 공간을 보는 것 중요!
+
+width: auto이면 컨테이닝 블록 만큼 차지한다 margin이 없어! 적용 안돼 
+
+width: fit-content
+content가 넘칠때 width가 맞춰서 늘어나는 것
+
+자손: descendant selector
+
+5th
+
+h1이 유일한 하나가 아닐 수가 있음
+h1을 한번만 쓰는 것을 권장하는 것이지 꼭 한번만 쓰라는 것은 아님!
+section 안에 h1 쓰이면 여러번 가능!
+
+
+한칸 띄운거 combinator
+selector 과 selector 사이에 있는 것
+combinator에 의해서 새로운 가치가 만들어짐
+
+combinator 종류가 있음
+.header img {} // descendant combinator => descendant selector
+.header > img {} // child combinator => child selector
+
+, grouping // 맨 위에 쓰인거  h1, p {} grouping // combinator 아님!
+
+
+header에 color: white;를 써서 h1, p에 상속함
+모든 property가 상속되지 않음
+상속되는 property가 이미 존재한다.
+
+상속은 모든 property에 적용되지 않음.
+
+margin no!
+background-color no!
+
+자식에 따로 안넣으면 그냥 부모의 배경이 뜨는 거여~
+
+text-align yes!
+font-size yes!
+부모의 폰트 사이즈 영향 받음. => 부모가 폰트 사이즈가 없으면 브라우저가 제공하는 폰트 사이즈를 상속 받음 기본 16px;
+
+initial, inherit
+상속이 안되는 것: initial
+상속이 되는것: inherit
+
+내가 강제로 상속 받겠다. => inherit
+초기화 코드에 inherit를 넣음
+폰트 사이즈는 initial 보다 inherit 이 낫다.
+
+property를 초기화 해줄때, 원래 상속이 지원되지 않는 margin의 경우 initial, font size는 상속이 되니까 inherit.
+
+unset // 알아서 바꿔줌 inherit, initial 로, 상속되는 것 안되는 것 알아서 판단해서 inherit, initial로 바꿔줌
+
+￼
+
+reset.css
+
+큰 틀부터 채우자!
+
+시각적으로 같은 경우: class 동일하게 사용한다.
+
+section layout 작업
+.section {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+작업 순서 중요!!!!!!
+
+다 똑같은 데 사진 다름
+class = “section skill” 
+class 하나 더 붙여줌
+
+img 덮어씀
+
+우선순위 
+후자우선 : 나중에 쓰는 것이 우선시 된다.
+
+
+코드 조각들이 모여서 최종 결과물이 된다.

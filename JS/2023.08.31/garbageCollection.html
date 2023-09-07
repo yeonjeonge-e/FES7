@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <script>
+    let me = { age: 30 };
+    let you = me;
+    //  이제 {age: 30}의 참조 카운트는 2가 됩니다.
+    //  2개 : me, you
+
+    me = null;
+    //  이제 {age: 30}의 참조 카운트는 1개가 됩니다
+
+    you = null;
+    //  이제 {age: 30}의 참조 카운트는 0개가 됩니다
+    //  - 가비지 컬렉션의 대상이 됨
+
+
+
+    let x = {
+      y: {
+        z: 1
+      }
+    };
+    //  x가 참조하는 객체를 Obj1, y가 참조하는 객체를 Obj2 라고 가정
+    //  Obj1 = 첫번째 중괄호 내용
+
+    let a = x;
+    //  Obj1의 참조 카운트 : 2 (x, a)
+    x = 1;
+    //  Obj1의 참조 카운트 : 1 (a)
+
+    let b = a.y;
+    //  Obj2의 참조 카운트 : 2 (b, a.y)
+    a = 2;
+    //  Obj1의 참조 카운트 : 0
+    //  Obj2의 참조 카운트 : 1 (b)
+    //  - 가비지 컬렉션의 대상이 됨
+
+
+
+    // 클로져의 경우
+    function outer() {
+      let privateVal = ['test'];
+
+      function getPrivate() {
+        return privateVal
+      }
+
+      return getPrivate;
+    }
+
+    const getPrivate = outer();
+    let secretVal = getPrivate();
+
+    secretVal = null;
+    // 사용을 마친 secretVal 은 나중에 null 혹은 undefined 를 할당하여 클로져 공간과의 연결을 끊어야합니다.
+
+
+
+    //  가비지컬렉션이 참조 카운팅이 0인 친구를 먹고 다니는데,
+    //  클로저 등을 사용할 때는 렉시컬 스코프에 의해 참조값이 살아있어서 먹질 못한다!
+
+  </script>
+</body>
+
+</html>

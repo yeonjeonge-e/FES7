@@ -1,0 +1,73 @@
+@import "reset.css";
+
+/* font */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: var(--gray-6, #F2F2F2);
+}
+
+.container {
+  /* 화면 중앙 배치 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 500px;
+  height: 240px;
+
+  border-radius: 5px;
+  border: 1px solid var(--c-4-c-4-c-4, #C4C4C4);
+  background: #FFF;
+}
+
+.img {
+  padding: 30px 181px 28px 181px;
+}
+
+.login_text {
+  color: #000;
+  font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 0 32px 116px;
+}
+
+.btn_b {
+  position: absolute;
+  width: 440px;
+  height: 60px;
+  border-radius: 5px;
+  background: #2F80ED;
+  margin: 0 30px 30px 30px;
+}
+
+.btn_t {
+  color: #FFF;
+  font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  margin-top: 16px;
+}
+
+a {
+  text-decoration: none;
+}

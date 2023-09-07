@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼항연산자</title>
+</head>
+
+<body>
+  <script>
+    //  삼항연산자
+    //  (조건식) ? (참일 경우 실행되는 표현식) : (거짓일 경우 실행되는 표현식)
+
+
+
+    //  <예시문제>
+
+    //  휴대폰 연식
+    //  2019년 이하: '바꿀 때가 되었습니다.'
+    //  2019년 이상이면서 2022년 이하이다: '좀 더 쓰셔도 됩니다!'
+    //  2022년 초과: '욕심이에요.'
+
+
+    const 휴대폰연식 = prompt('년도 입력 : ');
+
+    if (휴대폰연식 <= 2019) {
+      console.log('바꿀때가 됨');
+    } else if (휴대폰연식 > 2022) {
+      console.log('욕심이야');
+    } else {
+      console.log('좀 더 써');
+    }
+
+  </script>
+</body>
+
+</html>

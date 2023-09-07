@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+  <style>
+    table {
+      width: 100%;
+    }
+
+    caption {
+      caption-side: bottom;
+      /* 이런식으로 top/bottom 으로 위치 설정은 가능하나,
+          처음 적을때는 무조건 첫번째 자식에 작성해야 함 */
+    }
+
+
+    .col1 {
+      background-color: gold;
+      width: 10%
+    }
+
+    .col2 {
+      background-color: #eee;
+    }
+
+    .col3 {
+      background-color: #ddd;
+    }
+
+    tbody tr:nth-child(1) {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h2>테이블의 제목</h2> -->
+  <table>
+    <caption>테이블의 제목, 설명</caption>
+    <!-- caption은 무조건 table의 첫번째 자식으로 들어와야 하는데, 생략 가능 -->
+
+    <colgroup>
+      <col class="col1">
+      <col style="width:20%;" span="2" class="col2">
+      <col class="col3">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th scope="col">제목</th>
+        <th scope="col">제목</th>
+        <th scope="col">제목</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">제목</th>
+        <td colspan="2">내용</td>
+        <td>내용</td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td>내용</td>
+        <td rowspan="2">내용</td>
+        <td>내용</td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td>내용</td>
+
+        <td>내용</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>합계</th>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </tfoot>
+    <!-- 마지막 요소 적어줄 때 사용 - 필수 아님 -->
+
+  </table>
+
+
+</body>
+
+</html>

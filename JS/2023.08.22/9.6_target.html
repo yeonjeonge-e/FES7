@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9.6 event-target, currentTarget</title>
+</head>
+
+<body>
+  <article class="parent">
+    <ol>
+      <li><button class="btn-first" type="button">버튼1</button></li>
+      <li><button type="button">버튼2</button></li>
+      <li><button type="button">버튼3</button></li>
+    </ol>
+  </article>
+
+  <script>
+    const parent = document.querySelector('.parent');
+    parent.addEventListener('click', function (event) {
+      //  괄호 안에 값은 보통은 event, e 라고도 쓴다 (헷갈리면 안됨)
+      console.log(event.target);
+      // 클릭한 위치에 따라 값의 위치가 바뀜
+      //  event.target 으로 버튼에 접근할 수 있다
+      console.log(event.currentTarget);
+      //  event 핸들러가 붙어있는 객체를 말함
+      //  currentTarget 의 값은 바뀌지 않음
+    })
+  </script>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>
+
+<!--
+  button에는 하위요소가 텍스트기 때문에 텍스트만 바뀌지만 li는 하위요소에 button이 있어서 button까지 텍스트로 바뀐다는 말씀
+-->

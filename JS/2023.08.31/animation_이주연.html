@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    div {
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+    }
+
+    .left {
+      transform: translateX(-50%);
+    }
+
+
+    .right {
+      transform: translateX(50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+
+  <script>
+    const div = document.querySelector('div');
+    function arrowright(e) {
+      console.log("right");
+      if (e.key === 'ArrowRight') {
+        console.log('keydown:', e.key)
+        div.classList.add('right');
+        div.classList.remove('left');
+      };
+    }
+    function arrowleft(e) {
+      console.log("left");
+      if (e.key === 'ArrowLeft') {
+        console.log('keydown:', e.key)
+        div.classList.add('left');
+        div.classList.remove('right');
+      };
+    }
+
+
+    window.addEventListener('keydown', arrowright)
+    window.addEventListener('keydown', arrowleft)
+
+
+  </script>
+</body>
+
+</html>

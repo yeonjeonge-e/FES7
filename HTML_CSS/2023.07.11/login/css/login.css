@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 초기화 하는 코드*/
+body,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+body {
+  /* background-color: skyblue; */
+  font-family: 'SpoqaHanSansNeo-Regular', sans-serif;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.login-wrap {
+  /* background: url(../img/log-in-area.png) no-repeat 0 0 / 350px 140px; 
+  background-image: url(../img-/log-in-area.png);
+  background-repeat: no-repeat;
+  background-position: -1 -1;
+  background-size: 350px 140px;
+  */
+  width: 350px;
+  height: 140px;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  padding: 18px 15px;
+  font-size: 12px;
+}
+
+.btn-login {
+  display: flex;
+  /* 세로정렬 - 블록레벨*/
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  /* 가로에서 주축을 기준으로 정렬 */
+  align-items: center;
+  color: white;
+  background-color: #711BFF;
+  margin: 16px 0;
+  /* margin 간격주기 - 상하:16, 좌우:0 */
+  /* 좌우 margin은 0으로 지정해줬는데 왜 공간이 있을까? -- padding값을 지정해줬기 때문 */
+  border-radius: 4px;
+}
+
+/* flex 방법 
+.btn-login {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+
+/* block padding 방법 */
+/* .btn-login {
+  display: block;
+  text-align: center;
+  padding: 11px 0;
+}
+.btn-login img {
+  vertical-align: middle;
+} */
+
+.btn-login img {
+  width: 64px;
+  margin-right: 3px;
+}
+
+/* 아이디/비밀번호찾기/회원가입 */
+.login-link {
+  color: #767676;
+}
+
+.login-link img {
+  width: 16px;
+  /* width값만 지정해주면 height 값을 자동으로 지정됨
+    img에는 기본적으로 정해진 간격이 있음
+    그래서 height값만 지정해줘두 되고, width값만 지정해줘두 됨 
+    aspect-ratio 비율을 안적어줘도 자동으로 유지가 됨 */
+  vertical-align: middle;
+  /* img : 인라인 요소
+  - text에 베이스라인으로 정렬이 됨
+  - 근데 그걸 middle 라인으로 정렬을 해준다 라는 뜻*/
+  margin-right: 4px;
+}
+
+.login-link span {
+  margin: 0 2px;
+  /* 인라인 요소에 좌우마진은 적용가능 (상하마진은 불가능) */
+}
+
+/* float */
+/* .login-link a:last-child {
+  float: right;
+} */
+
+.login-link {
+  display: flex;
+  justify-content: space-between;
+  /*
+    아이디/비밀번호/회원가입 요소들을 양 끝으로 배치하기 위한 코드
+    id/pw가 묶여있어서 space-between 값을 지정해도 떨어지지 않음 */
+}

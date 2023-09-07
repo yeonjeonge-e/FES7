@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    function RobotFactory(foodNames) {
+      this.menu = foodNames;
+      // this.menu = foodNames;
+      // this.sayMenu = function () {
+      //     const index = parseInt(Math.random() * this.menu.length)
+      //     console.log(`삘비리비리 오늘의 메뉴는 ${foodNames[index]}`)
+      // }
+    }
+
+
+    RobotFactory.prototype.sayMenu = function () {
+      const index = parseInt(Math.random() * this.menu.length)
+      console.log(`삘비리비리 오늘의 메뉴는 ${this.menu[index]}`)
+    }
+
+    const robot = new RobotFactory(['청국장', '물냉면', '돔배고기']);
+    const robot2 = new RobotFactory(['김치찌개', '비빔냉면', '삼겹살'])
+
+    robot.sayMenu();
+
+  </script>
+</body>
+
+</html>

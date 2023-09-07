@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 꾸미기</title>
+  <style>
+    div {
+      width: 200px;
+      text-align: center;
+      font-weight: bold;
+      /* 폰트 굵기 Ex) Ctrl+B 같은 효과 */
+      padding: 10px;
+      margin: 20px;
+      font-size: 30px;
+    }
+
+    .box1 {
+      background-color: #343F50;
+      color: white;
+      border: 5px solid black;
+    }
+
+    .box2 {
+      background-color: #343F50;
+      color: white;
+      height: 30px;
+      margin-left: 30px;
+      border-top: 7px solid #4a5568;
+      border-left: 7px solid #4a5568;
+      outline: 10px solid black;
+      /* outline : border 밖으로 생기는 영역 */
+    }
+
+    /* 
+    보더에 그라데이션 넣는 예시
+    .box22 {
+      border: 20px solid;
+      border-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+      border-image-slice: 1;
+    }
+    */
+
+    .box3 {
+      background: linear-gradient(90deg, rgba(133, 78, 246, 1) 0%, rgba(56, 107, 242, 1) 100%);
+      /* 90도, 000 색상 0%에서 시작해서 000 색상 100%로 끝나게 지정 */
+      background-clip: padding-box;
+      /* dashed 설정 시 border-style(---) 사이에 색상 없애는 코드 */
+      /* 배경을 잘라내겠다 : 어디까지? padding까지 ! */
+      border-radius: 50px 50px;
+      border-style: dashed;
+      border: 3px dashed plum;
+    }
+
+    .box4 {
+      background-color: beige;
+      border-style: outset;
+      /* box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 10px 0px; */
+      box-shadow: 5px 5px 5px 1px gray;
+      border-radius: 0 50px 50px 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">disend</div>
+  <div class="box2"></div>
+  <!-- <div class="box22">disend</div> -->
+  <div class="box3">disend</div>
+  <div class="box4">disend</div>
+</body>
+
+</html>
+
+<!-- 
+  box-sizing: border-box
+  - border를 포함한 사이즈
+ -->
+
+<!-- 
+  Ex) box로 안하고 button으로 값을 지정해준다면
+      button은 자동으로 텍스트가 가운데 정렬이 됨
+      그리고 텍스트의 길이에 따라 길이가 길어나서
+      width,height 값을 지정해주게 되면
+      나중에 유지 보수 시 안좋을 수 있음
+      그러니까 padding으로 좌우, 위아래 간격을 지정해주기
+  -->

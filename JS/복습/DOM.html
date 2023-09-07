@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <!--
+      DOM 트리에 접근하기
+      - 해당하는 id를 가진 요소에 접근한다
+        document.getElementById();
+
+      - 해당하는 모든 요소에 접근하기
+        document.getElementsByTagName();
+
+      - 해당하는 클래스를 가진 모든 요소에 접근하기
+        document.getElementsByClassName();
+
+      - css 선택자로 단일 요소에 접근하기
+        document.querySelector("selector");
+
+      - css 선택자로 여러 요소에 접근하기
+        document.querySelectorAll("selector");
+
+      
+      - 이벤트 삽입
+        target.addEventListener(type, listener);
+
+      
+      ★ 위 메소드들은 앞으로 많이 사용하니까 꼭 알아야 함 ★
+    -->
+
+
+  <!-- 
+  <article id="container">
+    <ul>
+      <li>탕수육</li>
+      <li class="item-second">유산슬</li>
+      <li>짜장면</li>
+    </ul>
+  </article>
+
+  <script>
+    const cont = document.getElementById('container');
+
+    const item1 = cont.getElementsByTagName('li');
+    //  실시간으로 업데이트 됨, 해당 객ㅌ체의 각 속성에 대한 변경사항이 즉시 반영됨
+    const item3 = cont.querySelectorAll('li');
+    //  정적 - 해당 객체에 대한 변경사항은 즉시 반영이 안됨
+  </script>
+-->
+
+
+
+  <!-- 
+  <button>HELLO!</button>
+  <script>
+    // 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+    // listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+
+    const myBtn2 = document.querySelector("button");
+
+    myBtn2.addEventListener('click', function () {
+      console.log("hello world");
+    })
+
+    //  버튼을 클릭할수록 누적값 생김 ( 숫자만 증가 함 )
+  </script>
+-->
+
+
+
+
+  <!-- 
+  <button>Make me BLUE!</button>
+  <script>
+    const myBtn = document.querySelector("button");
+
+    myBtn.addEventListener('click', function () {
+      myBtn.classList.add("blue");
+      // blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+      myBtn.classList.remove("blue");
+      //  클래스를 제거합니다.
+      myBtn.classList.toggle("blue");
+      //  클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+      myBtn.classList.contains("blue");
+      //  해당하는 클래스가 있는지 확인합니다.
+    })
+  </script>
+-->
+
+
+
+  <!-- 
+  <ul></ul>
+  <button>Make me MORE!</button>
+  <script>
+    const myBtn = document.querySelector("button");
+    const myUl = document.querySelector("ul");
+
+    myBtn.addEventListener('click', function () {
+      for (let i = 0; i < 5; i++) {
+        // const myLi = document.createElement('li');
+        //  li 형태가 5개씩 아래로 늘어남
+        // const myLi = document.createTextNode('li');
+        //  li 텍스트 자체가 가로로 5개씩 늘어남
+        // const myLi = document.appendChild('li');
+        //  버튼을 클릭할수록 누적값 생김
+        myUl.appendChild(myLi);
+      }
+    })
+  </script>
+  -->
+
+
+
+
+  <!-- 
+  <p></p>
+  <input type="text">
+  <button>Write Something!</button>
+  <div></div>
+
+  <script>
+    const myBtn = document.querySelector("button");
+    const myP = document.querySelector("p");
+    const myInput = document.querySelector("input");
+    const myDiv = document.querySelector("div");
+    let clickCount = 0;
+
+    myInput.addEventListener('input', () => {
+      myP.textContent = myInput.value;
+    });
+
+    myBtn.addEventListener('click', () => {
+      myDiv.textContent = myP.textContent;
+      if (myP.textContent !== "") {
+        clickCount++;
+      }
+      console.log(clickCount);
+
+    });
+
+  </script>
+-->
+
+
+
+  <h3>글자 입력해</h3>
+  <p></p>
+  <input type="text">
+  <button>Write Something!</button>
+  <div></div>
+
+  <script>
+    const myBtn = document.querySelector("button");
+    const myP = document.querySelector("p");
+    const myInput = document.querySelector("input");
+    const myDiv = document.querySelector("div");
+    let clickCount = 0;
+
+    myInput.addEventListener('input', () => {
+      // myDiv.textContent = myP.textContent;
+      myP.textContent = myInput.value;
+
+    });
+
+    myBtn.addEventListener('click', () => {
+      myDiv.textContent = myP.textContent;
+      if (myP.textContent !== "") {
+        clickCount++;
+      }
+
+      for (let i = 0; i < myDiv; i++) {
+        // myDiv.textContent = myP.textContent;
+        myP.textContent = myInput.value;
+      }
+      console.log(clickCount);
+    });
+
+
+
+  </script>
+
+
+
+
+  <!-- 
+  <p></p>
+  <input type="text">
+  <button>Write Something!</button>
+  <div></div>
+
+  <script>
+    const myBtn = document.querySelector("button");
+    const myP = document.querySelector("p");
+    const myInput = document.querySelector("input");
+
+    myBtn.addEventListener('click', function () {
+      myP.textContent = myInput.value;
+    });
+
+    // input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
+    myInput.addEventListener('input', () => {
+      myP.textContent = myInput.value;
+    });
+
+    myP.innerHTML = "<strong>I'm Strong!!</strong>";
+
+  </script> -->
+</body>
+
+</html>

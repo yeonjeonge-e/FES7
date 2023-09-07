@@ -1,0 +1,50 @@
+/* font-face 상대경로로 폰트 연결 */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('./font/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: Pretendard-Regular, 'Times New Roman', Dotum, '돋움', sans-serif;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+.parents {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+
+  font-size: 20px;
+}
+
+.child {
+  /* width: 50px; */
+  /* 200px * 0.5 = 100px */
+
+  width: 50vw;
+  /* 1vw : 화면의 1% */
+  /* 전체 공간이 100이면 그 공간의 반만 차지 - 크기는 유동적으로 변함 */
+  height: 50vh;
+
+  font-size: 0.5em;
+  background-color: salmon;
+}
+
+html {
+  /* html : 최상단루트(부모) */
+  font-size: 10px;
+}
+
+p {
+  font-size: 4rem;
+  /* 16px * 4 = 64px */
+}

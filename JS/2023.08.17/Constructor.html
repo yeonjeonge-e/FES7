@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생성자 함수 (Constructor)</title>
+</head>
+
+<body>
+  <script>
+    // 생성자 함수
+    // 사용자 정의 객체를 생성할 때 사용
+
+    // <특징>
+    //  - 생성자 함수 이름 첫 글자는 대문자로 시작
+    //  - 반드시 'new' 연산자를 붙여 실행
+    //  - new 연산자는 생성자 함수의 this 가 인스턴스를 바라보도록 만들어주는 역할
+
+    function Book(책이름, 책가격, 저자, 출판일) {
+      this.책이름 = 책이름
+      this.책가격 = 책가격
+      this.저자 = 저자
+      this.출판일 = 출판일
+    }
+
+    //  new Book()
+    //  Book {책이름: undefined, 책가격: undefined, 저자: undefined, 출판일: undefined}
+
+    //  ★ this가 Book을 가리키고,
+    //  ★ new를 안 붙였을 때는 this가 window !
+
+    //    생성자 함수는 객체만 생성함
+
+  </script>
+
+
+
+
+
+  <script>
+    function Info(age, address) {
+      this.address = address;
+      this.age = age;
+    }
+
+    function Person(name, age, address) {
+      const newInfo = new Info(age, address);
+      return {
+        name: name,
+        getInfo() {
+          return newInfo;
+        },
+        setAge(age) {
+          newInfo.age = age;
+        }
+      }
+    }
+    const my = Person('지현', 26, "인천");
+    my.getInfo();
+    const you = Person('멋사', 7, '서울');
+    you.getInfo();
+
+
+
+    let book = {
+      책이름: '알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라',
+      책가격: 0,
+      저자: ['구나영', '김경림'],
+      출판일: '2022.08.12'
+    }
+    // 책이 100권이라면?
+
+
+    function Book(책이름, 책가격, 저자, 출판일) {
+      console.log(this);
+      this.책이름 = 책이름;
+      this.책가격 = 책가격;
+      this.저자 = 저자;
+      this.출판일 = 출판일;
+      this.read = function () {
+        console.log('reading....');
+      }
+    }
+
+
+    let book1 = new Book('JS', 0, ['이호준'], '2099.10.30')
+    let book2 = new Book('Python', 100000, ['이호준'], '2099.11.30')
+
+
+
+  </script>
+</body>
+
+</html>

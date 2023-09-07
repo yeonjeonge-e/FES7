@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문의 break & continue</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <!-- break 문 1 -->
+
+  <!--   
+  <script>
+    // 예시 1
+    let num = 0;
+    while (num < 11) {
+      num++;
+      document.write(num, '<br>');
+      if (num > 5) {
+        break;
+      }
+    }
+  </script>
+  -->
+
+
+
+  <!-- break 문 1 -->
+  <!-- 
+  <script>
+    // 예시 2
+    let i = 0;
+    while (i < 100) {
+      i++;
+      console.log(i + '살 입니다.');
+      if (i === 14) {
+        console.log(i + '살 부터 중학생이 됩니다.');
+        break;
+      }
+    }
+    console.log('중학교 입학을 축하합니다');
+
+    //  결과값
+    //  14살 부터 중학생이 됩니다.
+    //  중학교 입학을 축하합니다
+  </script>
+-->
+
+
+
+
+
+  <!-- continue 문 1 -->
+  <!-- 
+  <script>
+    for (let i = 0; i < 20; i++) {
+      if (i < 13) continue;
+      console.log(i + '살은 청소년입니다.');
+    }
+
+    // i가 0-12일때 까지는 continue 안에 있는 문장을 실행하지 않음
+
+    //  결과값
+    //  13살은 청소년입니다.
+    //  14살은 청소년입니다.
+    //  15살은 청소년입니다.
+    //  16살은 청소년입니다.
+    //  17살은 청소년입니다.
+    //  18살은 청소년입니다.
+    //  19살은 청소년입니다.
+
+    // 원하는 조건 하에 회전 차례를 건너뛸 수 있음
+  </script>
+-->
+
+
+
+  <!-- continue 문 2 -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      if (i === 13) continue;
+      console.log(i + '살은 청소년입니다.');
+    }
+
+  // i가 0-12일때 까지는 continue 안에 있는 문장을 실행하지 않음
+
+  //  결과값
+  //  0살은 청소년입니다.
+  //  1살은 청소년입니다.
+  //  2살은 청소년입니다.
+  //  3살은 청소년입니다.
+  //  4살은 청소년입니다.
+  //  5살은 청소년입니다.
+  //  6살은 청소년입니다.
+  //  7살은 청소년입니다.
+  //  8살은 청소년입니다.
+  //  9살은 청소년입니다.
+  //  10살은 청소년입니다.
+  //  11살은 청소년입니다.
+  //  12살은 청소년입니다.
+  //  14살은 청소년입니다.
+  //  15살은 청소년입니다.
+  //  16살은 청소년입니다.
+  //  17살은 청소년입니다.
+  //  18살은 청소년입니다.
+  //  19살은 청소년입니다.
+
+  //  i === 13 일때는 continue 안에 있는 문장을 실행하지 않고 넘어감
+  </script>
+
+</body>
+
+</html>

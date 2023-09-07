@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    p {
+      background: pink;
+    }
+
+    .max-content {
+      width: max-content;
+      /* content 길이만큼 늘어남
+        -- 너가 가지고 있는 content 길이만큼 늘어남
+        부모의 길이도 넘어서서 늘어남*/
+    }
+
+    .min-content {
+      width: min-content;
+    }
+
+    .fit-content {
+      width: fit-content;
+      /* 최대 길이까지 늘어나되, 부모의 길이는 넘지 않음 */
+    }
+
+
+    .parent {
+      width: 500px;
+      background: gray;
+    }
+
+    .parent p {
+      width: 200px;
+      margin: auto;
+    }
+
+    .parent p {
+      width: 200px;
+      margin: auto 0 auto auto;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+  </p>
+  <p class="max-content">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+  </p>
+  <p class="min-content">
+    Lorem ipsum dolor sit
+    <!-- 단어 하나하나로 각각
+        만약 l o r e m i p ~ 이런식으로 입력하면 한 단어씩 한 줄로 보임 -->
+  <p class="min-content">
+    한글로 작성하면요?
+  </p>
+  </p>
+  <p class="fit-content">
+    Lorem ipsum dolor sit
+  </p>
+
+  <p class="fit-content">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa
+    eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+  </p>
+
+  <div class="parent">
+    <p>Lorem ipsum dolor sit</p>
+  </div>
+</body>
+
+</html>

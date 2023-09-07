@@ -1,0 +1,283 @@
+@keyframes snot {
+  0% {
+    transform-origin: 0% 0%;
+    opacity: 1;
+    top: 40%;
+  }
+
+  100% {
+    transform-origin: 0% 0%;
+    top: 50%;
+    height: 25%;
+
+    opacity: 1;
+
+    transform: rotate(720deg);
+  }
+}
+
+
+@keyframes mouthh {
+  to {
+    opacity: 1;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+
+    top: 290px;
+    right: 130px;
+
+    transform: rotate(20deg);
+    border: 2px solid #827E7E;
+    border-radius: 2em;
+    background: #db8a9a;
+  }
+}
+
+
+/* ------------------------------------------------ */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E5DACE;
+}
+
+.maenggoo {
+  position: relative;
+  margin: 150px auto;
+
+  width: 416px;
+  height: 416px;
+}
+
+
+/* 머리카락 */
+.maenggoo .hair {
+  position: absolute;
+  width: 275px;
+  height: 208px;
+  left: -17px;
+  top: 7px;
+  border-bottom: 35px solid #8D8180;
+  border-radius: 36% 59%;
+  transform: rotate(140deg);
+  z-index: 2;
+}
+
+.maenggoo .hh {
+  position: absolute;
+  width: 273px;
+  height: 205px;
+  left: 1px;
+  top: 13px;
+  border-bottom: 35px solid #8D8180;
+  /* border-bottom: 35px solid red; */
+  border-radius: 39% 60%;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.maenggoo .ha {
+  position: absolute;
+  left: 100px;
+  top: 135px;
+  border-style: solid;
+  border-width: 40px 90px 0 0px;
+  border-color: #8D8180 transparent transparent transparent;
+  border-radius: 10%;
+  transform: rotate(180deg);
+  z-index: 2;
+}
+
+.maenggoo .hb {
+  position: absolute;
+  left: 70px;
+  top: 100px;
+  border-style: solid;
+  border-width: 0 40px 70px 35px;
+  border-color: transparent transparent #8D8180 transparent;
+  border-radius: 10%;
+  transform: rotate(10deg);
+  z-index: 2;
+}
+
+.maenggoo .hc {
+  position: absolute;
+  left: 15px;
+  top: 120px;
+  border-style: solid;
+  /* border-width: 40px 25px 0 100px; */
+  border-width: 40px 20px 0 80px;
+  border-color: #8D8180 transparent transparent transparent;
+  border-radius: 10%;
+  transform: rotate(210deg);
+}
+
+/* ---------------------------------------------- */
+
+/* 얼굴 */
+.maenggoo .face {
+  position: absolute;
+
+  width: 310px;
+  height: 370px;
+  transform: rotate(-20deg);
+
+  border-radius: 1100em 1100em 800em 1200em;
+  border: 3px solid #AB9B90;
+  background: #F1D6C8;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.maenggoo .face:hover {
+  animation: mouth-h infinite alternate;
+}
+
+
+/* 귀 */
+.maenggoo .ear {
+  position: absolute;
+
+  width: 67px;
+  height: 93px;
+  transform: rotate(-7deg);
+
+  top: 170px;
+  left: -45px;
+
+  border: 3px solid #AB9B90;
+  border-radius: 100%;
+  background: #F1D6C8;
+}
+
+
+/* 눈 */
+.maenggoo .eye {
+  position: absolute;
+  width: 11px;
+  height: 12px;
+  border: 1px solid #827E7E;
+  background: #827E7E;
+  border-radius: 100%;
+}
+
+.maenggoo .eye.left {
+  top: 133px;
+  left: 140px;
+}
+
+.maenggoo .eye.right {
+  top: 145px;
+  right: 110px;
+}
+
+
+/* 눈썹 */
+.maenggoo .eyebrow {
+  animation: eyebrow 1s infinite alternate;
+  width: 65px;
+  height: 80px;
+  border-bottom: 4px solid #8D8180;
+  border-radius: 45% 60%;
+
+  position: absolute;
+}
+
+.maenggoo .eyebrow.left {
+  transform: rotate(180deg);
+  top: 80px;
+  left: 95px;
+}
+
+.maenggoo .eyebrow.right {
+  /* left: 65%; */
+  transform: rotate(-165deg);
+  top: 100px;
+  right: 60px;
+}
+
+
+
+/* 코 */
+.maenggoo .face .nose {
+  animation: snot 2s infinite;
+  /* infinite : 무한반복 */
+  /* alternate : 앞뒤로 반복 */
+  width: 10px;
+  height: 5px;
+  background: #eee;
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  z-index: 1;
+  opacity: 0;
+  animation-duration: normal;
+}
+
+
+/* 볼터치 */
+.maenggoo .cheek {
+  animation: cheekh 3s inherit alternate-reverse;
+  position: absolute;
+  background-color: rgba(235, 104, 130, 0.5);
+  border-radius: 50% 50%;
+  z-index: 3;
+
+}
+
+.maenggoo .cheek.left {
+  width: 50px;
+  height: 20px;
+  top: 160px;
+  left: 30px;
+  transform: rotate(10deg);
+}
+
+.maenggoo .cheek.right {
+  width: 50px;
+  height: 20px;
+  top: 200px;
+  right: 30px;
+  transform: rotate(10deg);
+}
+
+
+/* 입 */
+.maenggoo .mouth {
+  animation: mouthh 3s infinite alternate-reverse;
+  position: absolute;
+  width: 35px;
+  height: 16px;
+
+  top: 310px;
+  right: 150px;
+
+  transform: rotate(20deg);
+  border: 2px solid #827E7E;
+  border-radius: 2em;
+  background: #CC9BA5;
+}
+
+
+
+
+/* 몸 */
+.maenggoo .mg-body {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+
+  top: 330px;
+  right: 40px;
+
+  border: 3px solid #AB9B90;
+  border-radius: 90% 90% 10% 10%;
+  background: #F5DCAD;
+
+  z-index: -2;
+}

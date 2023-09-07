@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set</title>
+</head>
+
+<body>
+  <script>
+    let a = new Set('abc');
+  </script>
+
+
+
+
+
+  <script>
+    let a = new Set('abc');
+    let b = new Set('cde');
+
+    const cross = [...a].filter((value) => {
+      return b.has(value);
+    });
+
+    const union = new Set([...a].concat([...b]));
+
+    const differ = [...a].filter((value) => {
+      return !b.has(value);
+    })
+  </script>
+
+
+
+
+
+  <!-- 로또번호 생성하기 - set 사용해서 풀기 -->
+  <script>
+    function lottoGenerator() {
+      const lottoSet = new Set();
+
+      while (lottoSet.size < 6) {
+
+        const result = parseInt(Math.random() * 45 + 1);
+
+        lottoSet.add(result);
+      }
+
+      return lottoSet;
+    }
+
+    console.log(lottoGenerator());
+
+  </script>
+</body>
+
+</html>

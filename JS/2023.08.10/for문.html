@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fora문 최댓값 구하기</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <script>
+
+    //  전달받은 객체의 키와 벨류값을 모두 출력하는 for문을 만들어보세요.
+    const person = {
+      name: '재현',
+      age: 20,
+      gender: 'male'
+    };
+
+    // for (const key in person) {
+    //   console.log(key, person[key]);
+    // }
+
+    //  결과값
+    //  name 재현
+    //  age 20
+    //  gender male
+
+
+
+
+
+    //  Object.keys 안쓰고 푸는 방법은 ?
+    // for (key in person) {
+    //         console.log(${person[key]});
+    //     }
+
+
+
+
+
+    // 강사님 코드
+    const props = Object.keys(person);
+
+    for (let i = 0; i < props.length; i++) {
+      console.log(`key: ${props[i]} , value : ${person[props[i]]}`);
+      //  여기서는 빽틱 사용해야함 (``)
+      //  props라고 선언한 함수에는 name, age, gender가 배열 형태로 들어가 있음
+      //  props[i]는 0부터 3까지의 숫자가 들어간다
+      //  person[props[i]]는 0부터 3까지의 숫자가 들어간다
+      //  props[i]와 person[props[i]]는 숫자가 들어간다
+      //  props[i]는 key 값
+
+      //  value : ${person[props[i]]}
+      //  점 연산자로 안쓰고 대괄호 형식으로 적는 이유는 ?
+      //  키가 'name'같이 문자열로 들어오기 때문 !
+    }
+
+    //  결과값
+    //  key: name , value : 재현
+    //  key: age , value : 20
+    //  key: gender , value : male
+
+
+
+    //  object안에 어떤 key 값이 있는지 알 수 있는 메소드는 ? --- Object.keys()
+    //  객체의 값은 person[key이름] 형태로 가져온다
+
+    //  객체에 키로 접근하는 방법
+    //  1. .  점 연산자 == 멤버접근 연산자
+    //  2. []
+  </script>
+
+</body>
+
+</html>
+
+
+
+<!-- 
+  for in
+  - 객체의 속성들을 반복하여 작업을 수행
+  - 객체의 속성이 없으면 undefined이 반환된다.
+  - 모든 객체에서 사용이 가능
+  - 객체의 key 값에 접근할 수 있지만, value 값에 접근하는 방법은 제공하지 않는다.
+-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- head에 추가해도 되고, body의 자식으로 넣어도 됨 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- crossorigin : CORS 오류 무시하는 속성 -->
+</head>
+
+<body>
+  <h1>내 html에 리액트 1분만에 추가해보기!</h1>
+  <p>단 1분만에 설치없이 리액트를 추가할 수 있다구요?</p>
+
+  <div id="root"></div>
+  <script type="text/babel">
+
+
+
+    // 클래스형 컴포넌트
+    //  react 컴포넌트 정의하기
+    // const el = React.createElement;
+
+    //  class 선언
+    //  HelloButton 클래스는 React.Component 를 상속(extends) 받는다
+    // class HelloButton extends React.Component {
+    //   constructor(props) {
+    //     super(props);
+
+    //     this.state = { liked: false };
+    //   }
+
+    //   render() {
+    //     if (this.state.liked) {
+    //       return <p>Hello World!</p>;
+    //     }
+
+    //     return (
+    //       <button onClick={() => this.setState({ liked: true })}>
+    //         Hello
+    //       </button>
+    //     );
+    //   }
+    // }
+
+
+
+
+
+    // 함수형 컴포넌트
+    function HelloButton(props) {
+
+      // useState 리액트 훅
+      // 값을 변경하고 싶으면 useState 써야 함
+      // 구조 분해 할당
+      // 여기 적힌 React는 위에 스크립트로 불러와서 적어주는 거고 기본적인 훅은 input이 들어감
+      const [text, setText] = React.useState('hello');
+      // useState 실행하면 useState의 인자인 'hello'가 text로 넘어감
+      // useState('hello') : 콘솔에 찍으면 아무것도 없음
+
+      return (
+        <button onClick={() => setText('clicked!')}>
+          {text}
+        </button>
+        // setText 에는 clicked! 값이 들어감
+        // {text} 중괄호로 안쓰면 js에서는 사용불가
+
+        // setText('clicked!')
+      );
+      // hello 버튼을 클릭하면 버튼의 글자가 clicked 로 변환됨
+
+    }
+
+    const app = (
+      <div>
+        <HelloButton />
+        <HelloButton />
+        <HelloButton />
+      </div>
+    )
+
+    // DOM에 리액트 컴포넌트 랜더링하기
+    const domContainer = document.querySelector('#root');
+    // react-dom UI 구성요소를 만들고 관리하는 목적의 라이브러리입니다. 
+    ReactDOM.render(app, domContainer);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>지은 샵</title>
+  <link rel="stylesheet" href="../reset.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const data = fetch("http://test.api.weniv.co.kr/mall")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        return data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    const Product = (props) => {
+      return (
+        <div>
+          <Card goods={props.data} />
+        </div>
+      );
+    };
+
+
+
+    // const Card = (props) => {
+    //   props.goods.then((result) => {
+    //     const itemMenu = result.map((item) => {
+    //       return (
+    //         <div>
+    //           <h3>{item.price}</h3>
+    //           <p>{item.productName}</p>
+    //         </div>
+    //       );
+    //     });
+    //     console.log(result);
+    //     console.log(itemMenu[0].price);
+    //     return <div>{itemMenu}</div>;
+    //   });
+    // };
+
+
+
+    const Card = (props) => {
+      props.goods.then((result) => {
+        let itemMenu = "";
+        for (let i = 0; i < result.length; i++) {
+          itemMenu += `<div>
+                <h3>${result[i].price}</h3>
+                <p>${result[i].productName}</p>
+              </div>`;
+        }
+        // console.log(result);
+        console.log(itemMenu);
+        return <div>{itemMenu}</div>;
+      });
+    };
+
+
+    const body = (
+      <div>
+        <Product data={data} />
+      </div>
+    );
+
+    const root = ReactDOM.createRoot(document.querySelector("#root"));
+    root.render(body);
+  </script>
+</body>
+
+</html>

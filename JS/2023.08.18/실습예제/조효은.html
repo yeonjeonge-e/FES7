@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>color</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .screen {
+      background-color: black;
+      width: 500px;
+      height: 500px;
+      transition: 1s;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 70px;
+    }
+
+    button {
+      background-color: #fff;
+      width: 70px;
+      padding: 3px;
+      transition: 0.2s;
+
+      &:hover {
+        transition: 0.2s;
+        background-color: #6b6b6b;
+        color: #fff;
+        border-color: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <span class="screen"></span>
+
+    <ul class="button-container">
+      <li class="red"><button>red</button></li>
+      <li class="yellow"><button>yellow</button></li>
+      <li class="green"><button>green</button></li>
+    </ul>
+  </main>
+</body>
+<script>
+  const redBtn = document.querySelector(".red");
+  const yellowBtn = document.querySelector(".yellow");
+  const greenBtn = document.querySelector(".green");
+
+  const screen = document.querySelector(".screen");
+
+  redBtn.addEventListener("click", (e) => {
+    screen.style.backgroundColor = "red";
+  });
+
+  yellowBtn.addEventListener("click", (e) => {
+    screen.style.backgroundColor = "yellow";
+  });
+
+  greenBtn.addEventListener("click", (e) => {
+    screen.style.backgroundColor = "green";
+  });
+</script>
+
+</html>

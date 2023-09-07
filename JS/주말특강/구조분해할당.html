@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구조분해할당</title>
+</head>
+
+<body>
+  <script>
+    //  배열
+    const arr = [1, 2, 3];
+    console.log(arr);       // [1,2,3]
+
+
+
+    // 구조분해할당
+    const [a, b, c] = arr;
+    console.log(a, b, c, "구조분해할당한것");     //  1 2 3 '구조분해할당한것'
+    // 변수명에 관계없이 순서대로 값이 들어감
+
+
+
+    //  주의할 점은 key 가 같아야 한다. 배열과 달리 순서의 영향을 받지 않는다. (key 로 찾기 때문)
+    var o = { age: 42, name: "hello" };
+    //  구조분해할당할때 {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+    //  오브젝트 안에 값을 넣은거고
+    var { name: 이름, age: 나이 } = o;
+    //  이름과 나이라는 변수에 name, age 값을 넣어준 것
+
+    console.log(나이); // 42
+    console.log(이름); // hello
+
+
+
+    // var o = { p: 42, q: "hello"}
+    var o = { age: 42, speak: "hello" }
+    //  {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+
+    // key 가 불일치하면 할당되지 않는다.
+    var { p, q } = o;
+    console.log(p);       // undefined
+    console.log(q);       // undefined
+
+    // 구조분해할당 (디스트럭쳐링)
+    // var { age, speak, up } = o;
+    var { speak, age, up } = o;
+    console.log(age);     // 42
+    console.log(speak);   // hello
+    console.log(up);      // undefined
+
+
+
+    //  ★ 이해 안감 ★
+    //  변수 기본값 설정 (key 에 매칭된 value 가 undefined 일 경우 기본값이 적용됨)
+    var o = { age: 42, speak: "hello" }
+    //  {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+
+    var { age = 30, speak = "hi", man = "철수" } = o;
+    // key의 value가 undefined 경우에 대해 기본값 할당
+
+    // ★★★
+    console.log(man);     // 철수     :   변수 o에 없는 undefined 로 기본값 적용됨
+    console.log(age);     // 42       :   변수 o에 값이 있어 기본값 30이 적용안됨
+    console.log(speak);   // hello    :   변수 o에 값이 있어 기본값 hi가 적용안됨
+
+
+
+    //  ★ 이해 안감 ★
+    var o = { age: 42, name: "hello" };
+    //  {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+    var { name: 이름, age: 나이 } = o;
+    //  이름과 나이라는 변수에 name, age 값을 넣어준 것
+
+    console.log(나이);  //  42
+    console.log(이름);  //  hello   //  왜 모건님 블로그에는 true 라고 적혀있을까 ?
+    //  ★★★
+    console.log(name);  //  빈 문자열 출력됨  -  전역에서는 name 변수명 사용금지
+    console.log(age);   //  참조 오류(Uncaught ReferenceError)
+
+
+
+    //  ★★★ 이해 안감 ★★★
+    //  실무에서 사용하는 것
+    var o = { age: 42, name: "hello" };
+    var { name, age } = o;
+
+    function name(o) {
+      // o = { age: 42, name: "hello" };
+      const { name, age } = o;
+
+      console.log(name, "이름");    //  hello 이름
+      console.log(age, "나이");     //  42 '나이'
+    }
+
+    name(o);
+  </script>
+
+
+
+
+
+  <!-- 동수님 질문 -->
+  <script>
+    let obj = { one: 1, two: 2 };
+    //  {원래키값:내가쓸변수명,원래키값:내가쓸변수명}
+    let { one: myNum } = obj;
+    //  myNum 이라는 변수에 one 값을 넣어준 것
+    console.log(myNum);             //  1
+    //  myNum 변수에는 one 값이 들어있음, one 값은 1이라 1이 출력됨
+
+    //  1 이라는 키 값을 오브젝트에서 찾고, myNum에 값을 넣음
+    //  Q. obj.one에서 .one이 생략된건가요?
+    //   - 아님 ! nyNum에 할당한 것 - 같은 이름의 키값을 할당한 것
+  </script>
+</body>
+
+</html>
+
+<!--
+  실무에서도 많이 사용 !!!
+-->

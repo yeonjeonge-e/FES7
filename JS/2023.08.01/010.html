@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript type</title>
+</head>
+
+<body>
+  <script>
+    // 원시타입
+    // string, number, bigint, boolean, undefined, symbol, null이 원시타입에 속합니다.
+
+    // 특징 1: 변경 불가
+    let x = 'hello'
+    console.log(x)      // hello
+    console.log(x[0])   // h
+    console.log(x[1])   // e
+    x[0] = 10           // 변경 불가
+
+    // 특징 2 : 값의 참조가 저장되는 것이 아닌, 값 자체를 가리키게 된다
+    let xx = 10
+    let yy = xx
+    xx = 20
+    console.log(xx, yy)     //  20  10
+
+    // 참조타입
+    // 객체, 배열, 함수, 정규표현식
+  </script>
+</body>
+
+</html>

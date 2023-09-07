@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    [class^="box"] {
+      /* class="box ~" 인 태그들의 전체 */
+      width: 100px;
+      height: 100px;
+      /* 사각형들의 가로/세로 사이즈 */
+      background: rgba(141, 75, 246, 0.6);
+      /* Q. 왜 이 태그의 background 색상이 여기에 적혀있냐면 ?
+            3. 그래서 자연스레 첫번째 자식도, 마지막 자식도 아닌 자식의 색상이 여기에서 정해짐 */
+      color: #fff;
+      /* 글자색 */
+      line-height: 100px;
+      /* 텍스트 높이 */
+      text-align: center;
+      /* 텍스트 위치 정렬 */
+    }
+
+    [class^="box"]:first-child {
+      /* 1. class="box ~" 인 태그들 중 첫번째 자식 */
+      background: rgba(46, 111, 242, 0.6)
+    }
+
+    [class^="box"]:last-child {
+      /* 2. class="box ~" 인 태그들 중 마지막 자식 */
+      background: rgba(250, 128, 114, 0.5);
+    }
+
+    .container {
+      background: skyblue;
+      /* container : 쉽게 말해 부모
+          - background 색을 지정해 준 이유가 이 너비가 부모다 라는 것을 알려주기 위해서
+          
+        자식들이 모두 float 속성을 가지고 있을 때의 해결 방법
+        --> 부모(container)에게 높이 값 지정해주기
+            overflow: hidden; */
+    }
+
+    .box1 {
+      float: left;
+    }
+
+    .box2 {
+      float: left;
+    }
+
+    .box3 {
+      clear: left;
+      /* box1, 2 모두 float 속성이 적용(블록) 되어 있어서
+        box3도 float:left; 로 지정해주면 a-b-c 이런식으로 나란히 블록 형식의 레이아웃이 만들어짐
+        그래서 float 속성을 해제해주는 clear 코드 작성해줌
+        -> 그러면 a-b-c 블록형태가 아닌 a 밑에 c 박스가 붙어서 생긴다
+        
+        -> 자식들이 모두 float 속성을 갖게 되면
+           컨테이너 요소의 높이에 자식 요소들의 높이가 포함되지 않는다
+           --> 이게 무슨 말이냐 하면
+                부모의(container) 높이는 정해져 있는데
+                자식들이 공간을 다 차지해버림 */
+      position: relative;
+      z-index: 10;
+      /* 아직 이 속성은 모르겠음 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    container
+    <div class="box box1">A</div>
+    <div class="box box2">B</div>
+    <div class="box box3">C</div>
+  </div>
+
+</body>
+
+</html>

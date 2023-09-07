@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class 소시지 {
+      constructor(a, b) {
+        this.a = a;
+        this.b = b;
+      }
+      taste() {
+        console.log(`${this.a}와 ${this.b} 맛이 난다!`)
+      }
+    }
+    class FiresSausage extends 소시지 {
+      taste() {
+        // super.taste();
+        this.taste();
+        console.log('불맛이 나기 시작합니다.');
+      }
+    }
+
+    const one = new FiresSausage('불고기', '파');
+    one.taste();
+  </script>
+</body>
+
+</html>

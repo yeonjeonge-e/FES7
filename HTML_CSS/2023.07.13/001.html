@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 변수, 함s수</title>
+  <style>
+    :root {
+      /* 전역 CSS 변수 선언 */
+      --main-color: ;
+      --pane-padding: 0.5em 2em;
+      --border-radius: 0.4em;
+      /*  -- 를 붙여주는건 규칙 !
+            뒤에 오는 이름들은 내가 임의로 정하는 변수명 ! */
+    }
+
+    button {
+      color: var(--main-color, blue);
+      /*`  만일 변수값이 지정되어 있지 않다면? - blue로 색을 지정하겠다 라는 뜻 */
+      border-color: var(--main-color, blue);
+      padding: var(--pane-padding);
+    }
+
+    p {
+      color: var(--main-color, blue);
+    }
+  </style>
+</head>
+
+<body>
+  <button type="button">버튼</button>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis quas a tempore beatae, sapiente deleniti
+    suscipit quisquam repudiandae nesciunt culpa, debitis dolor aliquid doloremque reprehenderit quos nostrum at,
+    necessitatibus adipisci?</p>
+</body>
+
+</html>

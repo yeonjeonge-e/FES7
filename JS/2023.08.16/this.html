@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this</title>
+</head>
+
+<body>
+  <script>
+      ★ this ★
+    - 객체를 가리키는 참조 변수
+      - this는 호출되는 위치에 다라 다른 값을 출력하기 때문에 혼란을 줌
+
+
+    //  this : window
+    function a() {
+      console.log(this)
+    }
+    a();
+    //  출력값 : Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+    //  window는 브라우저 그 자체 --- 생략 가능
+
+
+
+    //  this : myObj
+    let myObj = {
+      val1: 100,
+      func1: function () {
+        console.log(this);
+      }
+    }
+
+    myObj.func1();
+    // 객체이름.함수이름() -- 형태
+
+    //  출력값 : {val1: 100, func1: ƒ}
+
+
+
+
+    let myObj = {
+      val1: 100,
+      func1: function () {
+        console.log(this);
+      }
+    }
+
+    let test = myObj.func1;
+    test()
+    // this : 함수를 호출하는 객체
+
+  </script>
+
+
+
+
+
+  <button id="btn1">클릭해봐요!</button>
+  <button id="btn2">클릭해봐요!</button>
+
+  <script>
+    function a() {
+      console.log(this);
+    }
+    // a();
+
+    const myObj = {
+      val1: 100,
+      func1() {
+        console.log(this);
+      }
+    }
+
+    const button1 = document.getElementById("btn1");
+    const button2 = document.getElementById("btn2");
+
+    button1.addEventListener('click', myObj.func1);
+    button2.addEventListener('click', myObj.func1);
+
+        // let test = myObj.func1;
+        // test();
+
+        // myObj.func1();
+  </script>
+</body>
+
+</html>
+
+<!-- 
+  this
+  this라는 키워드를 가지고 있는 함수를 호출하는 객체
+-->

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+
+  <!-- private 프로퍼티 -->
+  <!-- 왜 쓰는지 모르겠음 - 고낭 넘기기 -->
+  <script>
+    class Robot {
+      #important
+      // #을 붙이면 비공개 프로퍼티가 됨
+
+      constructor(name, info) {
+        this.name = name;
+        this.#important = info;
+      }
+
+      sayYourName() {
+        console.log(`삐리리리, 제 이름은 ${this.name} 입니다. 주인님`);
+      }
+
+    }
+
+    const robot = new Robot('재현', 123123123);
+    // console.log(robot.#important);   // 크롬 개발자 도구에서는 된다. let/const 중복 선언과 같이.
+    // robot.#important = 000000000;
+  </script>
+
+
+
+
+
+  <!-- private 프로퍼티 접근, 수정 -->
+  <script>
+    class Robot2 {
+      #password
+
+      constructor(name, pw) {
+        this.name = name;
+        this.#password = pw;
+      }
+
+
+      sayYourName() {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      }
+
+      //  getter, setter 로 값 제어하기
+      //  값을 가져오는 역할
+      // getPassword() {
+      // 키워드를 사용해서 메서드를 선언
+      //   return this.#password
+      // }
+
+      // //  값을 수정하는 역할
+      // setPassword(pw) {
+      //   this.#password = pw;
+      // }
+
+      get password() {
+        return this.#password
+      };
+
+      set password(pw) {
+        //  set은 값을 설정하는거라 매개변수(pw) 적어줌
+        this.#password = pw;
+      };
+    }
+
+    const robot2 = new Robot2('재현', 123123);
+    // console.log(robot2.getPassword());
+    // robot2.setPassword(454545);
+    // console.log(robot2);
+    console.log(robot2.password); // password 프로퍼티가 있는 것 처럼 사용할 수 있다.
+    robot2.password = 456456; // 함수가 아닌 프로퍼티처럼 변경할 수 있다.
+    console.log(robot2.password);
+    robot2 = {
+      password: 123
+    }
+  </script>
+</body>
+
+</html>

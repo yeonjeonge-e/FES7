@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+
+    //  클로저랑 생성자랑 합쳐서 해보았는데 클로저가 잘 됐는지 확인해주실 수 있나요?
+
+    function Info(age, address) {
+      this.address = address;
+      this.age = age;
+    }
+    function Person(name, age, address) {
+      const newInfo = new Info(age, address);
+      return {
+        name: name,
+        getInfo() {
+          return newInfo;
+        },
+        setAge(age) {
+          newInfo.age = age;
+        }
+      }
+    }
+    const my = new Person('지현', 26, "인천");
+    my.getInfo();
+    const you = new Person('멋사', 7, '서울');
+    you.getInfo();
+
+  </script>
+</body>
+
+</html>
+
+<!--
+  Info에서는 age, address 프로퍼티를 갖고 있음
+  newInfo에 new Info 객체가 생성됨
+
+  person은 생성자 함수로 볼 수 없음
+
+  위 코드는 잘 짠 코드임 !
+-->

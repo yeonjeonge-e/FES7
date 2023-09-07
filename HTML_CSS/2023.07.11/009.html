@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-grow/shrink</title>
+  <style>
+    .container {
+      width: 500px;
+      height: 200px;
+      display: flex;
+      background-color: #ddd;
+    }
+
+    .item {
+      background-color: skyblue;
+      border: 2px solid royalblue;
+      flex-grow: 1;
+      /* 텍스트의 길이가 동일할 경우는 4개의 item 크기들이 모두 동일하게 늘어남 */
+      flex-basis: 0;
+      /* 만일 텍스트의 길이가 다를경우에 item 크기들을 동일시 하고 싶으면
+          flex-basis: 0 작성 */
+    }
+
+
+    .item1 {
+      flex-grow: 2;
+    }
+
+    /* 주축에서 늘어나게 됨 - 늘어날 수 있는만큼 늘어나라 라는 뜻 */
+    /* flex-grow: 2 라고 적어주면 item2 보다 item1이 더 늘어나게 됨 */
+
+    /* 
+    .item2 {
+      flex-grow: 1;
+    }
+     */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">item A aaaaaaa</div>
+    <div class="item item2">item B bbbbb</div>
+    <div class="item item3">item C ccc</div>
+    <div class="item item4">item D d</div>
+  </div>
+
+
+</body>
+
+</html>
+
+<!-- flex-shrink는 공간이 넘어갈 경우에 각 아이템들을 줄이는 방법을 설정한다?
+    라고 이해해도 될까요?
+  
+  - 넘어가는건 아님-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업내용 복습</title>
+</head>
+
+<body>
+
+  <script>
+    //  for문의 다양한 예시
+
+    //  1. 반복문
+    for (var i = 0; i < 10; i++) {
+      document.write(i, '<br>');
+    }
+    //  0부터 9까지 한줄로 출력됨
+
+
+
+
+
+    //  2. 1부터 100까지의 짝수의 합
+    let s = 0;
+    for (let i = 1; i <= 100; i++) {
+      if (i % 2 === 0) {
+        s += i;
+      }
+    }
+    document.write(s, '<br>');
+
+
+    //  if문 사용하지 않고 for문으로만 1-100까지의 짝수의 합 구하기
+    let a = 0;
+    for (let i = 0; i <= 100; i += 2) {
+      //  for문 실행하면 짝수의 값만 출력됨
+      a += i;
+    }
+    document.write(a);
+
+
+
+
+
+    //  구구단  3*5   i * j
+    for (let i = 1; i <= 9; i++) {
+      //  document.write(i);            123456789
+      for (j = 1; j <= 9; j++) {
+
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

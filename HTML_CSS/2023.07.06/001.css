@@ -1,0 +1,49 @@
+/* import 구글 폰트 삽입 */
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+/* font-face 눈누 폰트 삽입 */
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-pc {
+  font-family: 'PyeongChangPeace-Bold', sans-serif;
+}
+
+body {
+  color: red;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+h1 {
+  color: inherit;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+strong {
+  border-bottom: 5px solid currentColor;
+  /* currentColor : 부모의 컬러를 상속받는다 */
+}
+
+h2 {
+  color: #999;
+  font-family: 'Bagel Fat One', cursive;
+}
+
+
+/* 컬러값은 위에서 아래로 상속받음
+    (부모 -> 자식) */
+
+/* Q. strong에 컬러값이 없는데도 button이 레드로 적용되는건
+        strong이 body의 컬러를 상속받았고 그걸 button이 상속받아서 그런건가요 */
+
+/* 폰트 컬러의 맨 마지막 부분에만 대비율이 나옴
+    Ex) 카카오톡 보면 고대비 테마 라는게 따로 있음
+        노약자, 장애인 분들을 위해 만들어짐 */
