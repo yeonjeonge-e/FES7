@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 클래스 문법을 이용해 공 클래스를 하나 생성하세요.
+        // drawBall 이라는 메서드를 통해 공을 그려줄 수 있습니다.
+        // 그리고 moveBall 메소드를 통해 X축으로 왼쪽에서 오른쪽으로 이동합니다.
+
+        class Ball {
+            constructor(x) {
+                this.xPos = x;
+                ctx.clearRect(0, 0, 500, 100);
+                ctx.fillRect(this.xPos, 0, 30, 30);
+            }
+
+            draBall(value) {
+                this.xPos += value;
+
+                if (this.xPos > 470) {
+                    this.xPos = 0;
+                }
+
+                window.requestAnimationFrame(draBall(this.xPos));
+            }
+        }
+
+        const ball = new Ball(0);
+        ball.drawBall(5);
+    </script>
+</body>
+
+</html>
