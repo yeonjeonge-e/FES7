@@ -28,6 +28,27 @@ header {
   aspect-ratio: 1/1;
 }
 
+/* 아래처럼도 사용 가능 */
+/*
+.tit-law::after {
+  display: block;
+  content: "";
+  position: absolute;
+
+  // 부모의 가운데로 와야 하므로
+  top: 50%;
+  left: 50%;
+  width: 225px;
+  height: 225px;
+  margin: -112px 0 0 -112px;
+  // margin은 자기 자신 만큼은 뒤로 가야 하므로 width,height 길이의 반을 -로 해주는 것
+  // top. left는 이미 50%를 해줬고, 나머지 right와 bottom은 -112px로 해주는 것
+  
+  background-image: url("../images/title_bg.png");
+  background-position: center;
+}
+*/
+
 .img-txt {
   max-width: 486px;
   margin: 125px auto 85px;
@@ -66,6 +87,7 @@ header {
   background-image: url("../images/txt-right.png");
 }
 
+/* 이미지는 닫기 태그가 없어서 가상요소 사용 불가능 */
 /* header 스타일 끝 */
 
 /* main 스타일 시작 */
