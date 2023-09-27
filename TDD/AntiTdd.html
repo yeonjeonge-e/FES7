@@ -1,0 +1,67 @@
+<!-- AntiTdd : 이렇게 적으면 안된다는 코드 예시 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    article {
+      display: inline-block;
+      border: 3px solid black;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .viewer {
+      display: block;
+      font-size: 24px;
+      color: teal;
+      margin: 50px 0 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <strong class="viewer"></strong>
+    <input class="inp-txt" type="text">
+    <button class="btn-push" onclick="push()">적용</button>
+    <!-- 위 코드는 html과 js코드가 섞여있음 -->
+    <!-- 서로 다른 언어가 섞여 있는 코드는 되도록 지양 & 유지보수 어려움 -->
+    <!-- 서로 다른 코드가 섞여 있으면 유지보수가 어려움 -->
+  </article>
+
+  <script>
+    // 전역변수의 문제점
+    // 1. 계속 메모리를 차지함
+    // 2. 변수명이 곂치거나, 변수 선언이 중복되어 의도치 않게 될 수 있음
+
+    // 전역변수의 사용, 함수가 아니기 때문에 테스트 자체가 불가능함
+    const txt = "hello hi";
+    const viewer = document.querySelector('.viewer');
+    viewer.textContent = txt;
+    // 위 코드에서 41번째 줄 대신, 43번째 줄에 txt 대신 바로 값을 넣어줘두 됨
+
+
+    // 테스트케이스의 단점
+    // 재사용성이 떨어진다
+    function push() {
+      const inpTxt = document.querySelector('.inp-txt');
+      viewer.textContent = inpTxt.value;
+    }
+
+
+
+    // 결국 테스트가 가능하려면,
+    // 1. 테스트 대상이 UI에서 완전히 분리되어야 한다
+    // 2. 모든 기능은 함수로 구현해야 한다 - 이렇게 해야 테스트가 가능해짐
+
+  </script>
+</body>
+
+</html>
