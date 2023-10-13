@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { Timestamp, getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 
 // const firebaseConfig = {
@@ -30,8 +30,10 @@ const app = initializeApp(firebaseConfig);
 // firestore 초기화
 const appFireStore = getFirestore(app);
 
-// firebase 인증 초기화
+// 인증 초기화
 const appAuth = getAuth();
 
-export { appFireStore, appAuth };
+const timestamp = Timestamp;
+
+export { appFireStore, appAuth, timestamp } 
 // 밖에서 사용할 수 있게 적어줌

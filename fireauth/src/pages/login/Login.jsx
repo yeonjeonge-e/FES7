@@ -1,9 +1,11 @@
+import { useLogin } from '../../hooks/useLogin';
 import styles from './Login.module.css'
 import { useState } from 'react'
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { error, isPending, login } = useLogin();
 
     const handleData = (event) => {
         if (event.target.type === "email") {
@@ -16,6 +18,7 @@ export default function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(email, password);
+        login(email, password);
     }
 
     return (
@@ -23,7 +26,7 @@ export default function Login() {
             <main>
                 <h2 className={styles["img-title"]}>
 
-                <svg className="svg" width="156" height="75" viewBox="0 0 156 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="svg" width="156" height="75" viewBox="0 0 156 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_73192_4246)">
                             <path
                                 d="M131.504 48.336C131.589 48.144 131.781 48.048 132.08 48.048C132.421 48.048 132.624 48.144 132.688 48.336C132.773 48.528 132.891 51.3654 133.04 56.848C133.125 60.176 133.157 62.3947 133.136 63.504C133.136 64.6134 133.072 65.232 132.944 65.36C132.709 65.5947 132.475 65.6587 132.24 65.552C132.155 65.5307 132.091 65.424 132.048 65.232C132.005 65.04 131.963 64.656 131.92 64.08C131.877 63.504 131.845 62.7894 131.824 61.936C131.803 61.0614 131.771 59.856 131.728 58.32C131.6 53.2214 131.525 50.4267 131.504 49.936C131.44 49.0614 131.44 48.528 131.504 48.336ZM120.912 53.872C122.427 53.1467 123.429 52.816 123.92 52.88L124.656 52.944L124.624 55.568C124.581 56.848 124.475 58.2774 124.304 59.856C124.155 61.4347 124.016 62.4587 123.888 62.928C123.803 63.1627 123.6 63.312 123.28 63.376C122.981 63.4187 122.779 63.344 122.672 63.152C122.544 62.96 122.619 62.3307 122.896 61.264C123.088 60.4534 123.227 59.1947 123.312 57.488C123.419 55.7814 123.397 54.8427 123.248 54.672C123.099 54.544 122.501 54.6827 121.456 55.088C120.475 55.408 119.803 55.5894 119.44 55.632C119.077 55.6534 118.864 55.5467 118.8 55.312C118.779 55.1627 118.928 54.9814 119.248 54.768C119.589 54.5334 120.144 54.2347 120.912 53.872Z"
@@ -86,9 +89,11 @@ export default function Login() {
                     <input className="input-style" id="user-email" type="email" required onChange={handleData} value={email} />
 
                     <label className="label-style" htmlFor="user-pw">비밀번호</label>
-                    <input className="input-style" id="user-pw" type="password" required onChange={handleData} value={password} autoComplete='currnet-password'/>
+                    <input className="input-style" id="user-pw" type="password" required onChange={handleData} value={password} autoComplete='currnet-password' />
 
-                    <button className="black-btn" type="submit">로그인</button>
+                    {isPending && <strong>로그인이 진행중입니다.</strong>}
+                    {!isPending && <button className="black-btn" type="submit">로그인</button>}
+                    {error && <strong>{error}</strong>}
                 </form>
             </main>
 
